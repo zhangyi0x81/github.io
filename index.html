@@ -187,15 +187,231 @@
 
     
     
+
+    
       
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/18/Algorithm-4e-Sort-Collinear-Points/" itemprop="url">
+                  Algorithm 4e - Sort & Collinear Points
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-02-18T18:01:24+08:00" content="2016-02-18">
+              2016-02-18
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        
-        
-        
       
 
       
+        
+          
+            <h1 id="Callback"><a href="#Callback" class="headerlink" title="Callback"></a>Callback</h1><p>Java内置了Comparable Interface，该接口内含<code>public int compareTo(Item that)</code>。自定义类通过<code>implements Comparable&lt;Item&gt;</code>获得<code>compareTo</code>函数并override。根据当前对象与参数对象的比较结果，该函数返回-1(&lt;)，+1(&gt;)，0(=)。</p>
+<h1 id="Sort_Algorithms"><a href="#Sort_Algorithms" class="headerlink" title="Sort Algorithms"></a>Sort Algorithms</h1><h2 id="Selection_Sort"><a href="#Selection_Sort" class="headerlink" title="Selection Sort"></a>Selection Sort</h2><ul>
+<li>Based on iteration idea</li>
+<li>In iteration <em>i</em>, find the smallest item each time, swap it with the first item in the remaining array</li>
+<li>Use $(N-1)+(N-2)+…+1+0 \sim \frac{1}{2}N^2$ compares and $N$ exchanges.</li>
+<li>Running time insensitive to input. Even if the array is sorted, the algorithm still needs to do all the comparation and exchange as well. Quadratic time.</li>
+</ul>
+<h2 id="Insertion_Sort"><a href="#Insertion_Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h2><ul>
+<li>In iteration <em>i</em>, swap a[i] with <strong>each</strong> largerentry to its left.</li>
+<li>Entries to the left of current entry (including current entry) are in ascending order after each iteration.</li>
+<li>Entries to the right of current entry have not yet been seen.</li>
+<li>To sort a randomly-ordered array, the algorithm takes $\frac{1}{4}N^2$ compares and $\frac{1}{4}N^2$ exchanges. Twice faster than selection sort.</li>
+<li>Input sensitive:<ul>
+<li>Best case (array in ascending order): $N-1$ compares and $0$ exchanges.</li>
+<li>Worst case (array in descending order): $\frac{1}{2}N^2$ compares and $\frac{1}{2}N^2$ exchanges.</li>
+</ul>
+</li>
+<li>Def. <strong>inversion</strong> is a pair of keys out of order.</li>
+<li>An array is <strong>partially sorted</strong> if the number of inversions is $\leq{cN}$ (linear).</li>
+<li>Insertion sort runs in <strong>linear time</strong> or partially sorted arrays. <ul>
+<li>$N<em>{exchange} = N </em>{inversions}$</li>
+<li>$N<em>{compares}~ = N</em>{exchange} + (N-1)$</li>
+</ul>
+</li>
+</ul>
+<h2 id="Shellsort"><a href="#Shellsort" class="headerlink" title="Shellsort"></a>Shellsort</h2><ul>
+<li>Move entries more than one position at  a time by <em>h-sorting</em> array.</li>
+<li><em>h-sorting</em> array is h interlved sorted subsequences.</li>
+<li>Each time, starting from the $h+1 ^{th}$ entry, do <strong>insertion sort</strong> with stride <em>h</em>.</li>
+<li>For each time, the <em>h-sorting</em> array is partially sorted, so the time consumption of each insertion sort is linear.</li>
+<li>A <em>g-</em>sorted array remains <em>g-</em>sorted after <em>h-</em>sorting it.</li>
+<li>Sequence to use:<ul>
+<li>$3x+1$: 1, 4, 13, 40, 121, 364…</li>
+<li>Sedgewick: 1, 5, 19, 41, 109, 209, 505, 929, 2161, 3905…</li>
+</ul>
+</li>
+<li>Worst-case number of compares with the $3x+1$ increment is $O(N^{\frac{3}{2}})$</li>
+</ul>
+<h2 id="Merge_Sort"><a href="#Merge_Sort" class="headerlink" title="Merge Sort"></a>Merge Sort</h2><ul>
+<li>At most $NlgN$ compares and $6NlgN$ array accesses to sort any array of size $N$.</li>
+<li>$C(N)$ for compare time, $A(N)$ for access time<ul>
+<li>$C(N) \leq C(N/2) +C(N/2) + N$, $C(1) = 0$</li>
+<li>$A(N) \leq A(N/2) +A(N/2) + 6N$,  $A(1) = 0$</li>
+</ul>
+</li>
+</ul>
+<h2 id="Quick_Sort"><a href="#Quick_Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h2><h1 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h1><h2 id="Knuth_Shuffle"><a href="#Knuth_Shuffle" class="headerlink" title="Knuth Shuffle"></a>Knuth Shuffle</h2><ul>
+<li>In each iteration <em>i</em>, pick <em>r</em> between 0 (inclusive) to <em>i</em> (inclusive) uniformly at random, than swap a[r] and a[i]</li>
+<li>Takes linear time to produce a uniformly random permutation</li>
+</ul>
+<h2 id="Convex_Hull"><a href="#Convex_Hull" class="headerlink" title="Convex Hull"></a>Convex Hull</h2><ul>
+<li>The convex hull of a set of <em>N</em> points is the smallest perimeter fence enclosing all the points.</li>
+<li>Procedure:<ul>
+<li>Choose point p with smallest <em>y-</em>coordinate</li>
+<li>Sort all the remaining points by polar angle with p</li>
+<li>Consider points in order, discard unless it creates a counter clockwise turn</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/17/Algorithm-4e-Union-Find-Perlocation/" itemprop="url">
+                  Algorithm 4e - Union Find & Perlocation
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-02-17T23:44:35+08:00" content="2016-02-17">
+              2016-02-17
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union-Find"></a>Union-Find</h1><h1 id="Percolation"><a href="#Percolation" class="headerlink" title="Percolation"></a>Percolation</h1>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -304,6 +520,99 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/15/At_the_beginning/" itemprop="url">
+                  写在开始的话
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-01-15T21:43:22+08:00" content="2016-01-15">
+              2016-01-15
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>作为一个称职的程序员，正确使用Five Ws and one H是必备技能，这第一篇日志就以此模式进行一本正经的胡说八道。</p>
+<h2 id="When"><a href="#When" class="headerlink" title="When"></a>When</h2><p>从现在开始，每周至少一篇</p>
+<h2 id="What"><a href="#What" class="headerlink" title="What"></a>What</h2><p>CS相关内容学习的总结和周记 &amp;&amp; 读书心得和总结 &amp;&amp; 特定心情下的个人总结</p>
+<h2 id="Where"><a href="#Where" class="headerlink" title="Where"></a>Where</h2><p>此问题是废话，凑数补丁</p>
+<h2 id="Who"><a href="#Who" class="headerlink" title="Who"></a>Who</h2><p>此问题同样是废话，凑数补丁</p>
+<h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>写Blog于我而言是一个很久远的记忆，上了大学后似乎再也没有做过，久而久之，写作的能力仿佛愈发的退化了。看看高中时在MSN Space里写下的文字，一边感叹自己的二逼青春一边一篇篇删掉，纵使没有人再会去看，删掉那些黑历史也会让自己心里自在一些。</p>
+<p>开通这个Blog的目的如同Blog的副标题，权且作为自己学习Computer Science的记录，可能会带一些读书心得和笔记，也对自己是一个监督。这两年确实养成了一些不好的习惯，回想起当年做大创时席老师说过的话，自己还是觉得很羞愧。做了转专业的决定后，对我来说最难得并不是专业知识的积累，相反，我觉得CS在这个方面可能是全世界最棒的专业。然而一些不好的习惯却会产生蝴蝶效应，正如有人所言“每天都难一点，生活慢慢会变的简单。反过来每天都很简单，生活会越来越难”。鸡汤该反还是要反，不过道理还是懂的，职业生涯还未正式开始，一点点改掉不好的习惯还来得及。</p>
+<p>从跑偏的废话上回到正轨，这里作为记录自己学习CS的课程中的心得和记录。未来的半年既已决定专心看书补课，少了学校的气氛便希望以此来约束自己，不要浪费这难得的时间和机会，保证这个Blog至少每周一更。</p>
+<h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><p>从Algorithms I和HW/SW Interface的课开始跟起，Python交互式编程作为一个调剂，毕竟是入门级的课程。SICP，OS和Algorithm II放到稍后进行吧，去美帝之前也是一定要看完的，以后的事以后再说</p>
+<p>先写到这里，权当这是我程序员生涯的一个起点好了。</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
@@ -346,7 +655,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

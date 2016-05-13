@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="aria2," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -57,25 +57,19 @@
 
 
 
-<meta name="description" content="下载Aria2现在链接在此：aria2。Mac下安装完成后在Application、Alfred和Terminal中都看不到aria2命令，这是正常的，需要经过下一步配置才可以，安装目录在/usr/local/aria2下。
-Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew install aria2。
-安装完成后输入aria2c -v应该可以看到版本信息。
-配置A">
+<meta name="description" content="CallbackJava内置了Comparable Interface，该接口内含public int compareTo(Item that)。自定义类通过implements Comparable&amp;lt;Item&amp;gt;获得compareTo函数并override。根据当前对象与参数对象的比较结果，该函数返回-1(&amp;lt;)，+1(&amp;gt;)，0(=)。
+Sort AlgorithmsSele">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Aria2 for Mac">
-<meta property="og:url" content="http://yoursite.com/2016/02/16/Aria2-for-Mac/index.html">
+<meta property="og:title" content="Algorithm 4e - Sort & Collinear Points">
+<meta property="og:url" content="http://yoursite.com/2016/02/18/Algorithm-4e-Sort-Collinear-Points/index.html">
 <meta property="og:site_name" content="Over The River, To The Sea">
-<meta property="og:description" content="下载Aria2现在链接在此：aria2。Mac下安装完成后在Application、Alfred和Terminal中都看不到aria2命令，这是正常的，需要经过下一步配置才可以，安装目录在/usr/local/aria2下。
-Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew install aria2。
-安装完成后输入aria2c -v应该可以看到版本信息。
-配置A">
-<meta property="og:updated_time" content="2016-02-15T16:36:33.000Z">
+<meta property="og:description" content="CallbackJava内置了Comparable Interface，该接口内含public int compareTo(Item that)。自定义类通过implements Comparable&amp;lt;Item&amp;gt;获得compareTo函数并override。根据当前对象与参数对象的比较结果，该函数返回-1(&amp;lt;)，+1(&amp;gt;)，0(=)。
+Sort AlgorithmsSele">
+<meta property="og:updated_time" content="2016-02-18T14:25:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aria2 for Mac">
-<meta name="twitter:description" content="下载Aria2现在链接在此：aria2。Mac下安装完成后在Application、Alfred和Terminal中都看不到aria2命令，这是正常的，需要经过下一步配置才可以，安装目录在/usr/local/aria2下。
-Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew install aria2。
-安装完成后输入aria2c -v应该可以看到版本信息。
-配置A">
+<meta name="twitter:title" content="Algorithm 4e - Sort & Collinear Points">
+<meta name="twitter:description" content="CallbackJava内置了Comparable Interface，该接口内含public int compareTo(Item that)。自定义类通过implements Comparable&amp;lt;Item&amp;gt;获得compareTo函数并override。根据当前对象与参数对象的比较结果，该函数返回-1(&amp;lt;)，+1(&amp;gt;)，0(=)。
+Sort AlgorithmsSele">
 
 
 
@@ -93,7 +87,7 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
   };
 </script>
 
-  <title> Aria2 for Mac | Over The River, To The Sea </title>
+  <title> Algorithm 4e - Sort & Collinear Points | Over The River, To The Sea </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -211,7 +205,7 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
             
             
               
-                Aria2 for Mac
+                Algorithm 4e - Sort & Collinear Points
               
             
           </h1>
@@ -223,8 +217,8 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-02-16T00:35:03+08:00" content="2016-02-16">
-              2016-02-16
+            <time itemprop="dateCreated" datetime="2016-02-18T18:01:24+08:00" content="2016-02-18">
+              2016-02-18
             </time>
           </span>
 
@@ -249,57 +243,83 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
       
 
       
-        <h1 id="u4E0B_u8F7DAria2"><a href="#u4E0B_u8F7DAria2" class="headerlink" title="下载Aria2"></a>下载Aria2</h1><p>现在链接在此：<a href="https://aria2.github.io" target="_blank" rel="external">aria2</a>。Mac下安装完成后在Application、Alfred和Terminal中都看不到aria2命令，这是正常的，需要经过下一步配置才可以，安装目录在<code>/usr/local/aria2</code>下。</p>
-<p>Mac下更简单的方法是安装了Homebrew后直接在Terminal输入<code>brew install aria2</code>。</p>
-<p>安装完成后输入<code>aria2c -v</code>应该可以看到版本信息。</p>
-<h1 id="u914D_u7F6EAria2"><a href="#u914D_u7F6EAria2" class="headerlink" title="配置Aria2"></a>配置Aria2</h1><p>如果使用brew安装后，在Terminal输入<code>touch /Users/yourname/Downloads/session.txt &amp;&amp; aria2c --enable-rpc --rpc-listen-all --save-session=/Users/yourname/Downloads/session.txt --input-file=/Users/yourname/Downloads/session.txt -x16 -s16 -k1M --dir=/Users/yourname/Downloads</code>就可以启动aria2了。启动后webUI界面已经可以看到成功建立连接。但是为了方便不用每次输入这么一长串，可以使用配置文件的方式来简化操作。</p>
-<p>此步骤需要更改aria2的配置文件，有两个网站可供参考：</p>
-<ul>
-<li><a href="http://aria2c.com/usage.html" target="_blank" rel="external">Aria2 &amp; YAAW 使用说明</a></li>
-<li><a href="https://aria2.github.io/manual/en/html/aria2c.html" target="_blank" rel="external">aria2c</a></li>
+        <h1 id="Callback"><a href="#Callback" class="headerlink" title="Callback"></a>Callback</h1><p>Java内置了Comparable Interface，该接口内含<code>public int compareTo(Item that)</code>。自定义类通过<code>implements Comparable&lt;Item&gt;</code>获得<code>compareTo</code>函数并override。根据当前对象与参数对象的比较结果，该函数返回-1(&lt;)，+1(&gt;)，0(=)。</p>
+<h1 id="Sort_Algorithms"><a href="#Sort_Algorithms" class="headerlink" title="Sort Algorithms"></a>Sort Algorithms</h1><h2 id="Selection_Sort"><a href="#Selection_Sort" class="headerlink" title="Selection Sort"></a>Selection Sort</h2><ul>
+<li>Based on iteration idea</li>
+<li>In iteration <em>i</em>, find the smallest item each time, swap it with the first item in the remaining array</li>
+<li>Use $(N-1)+(N-2)+…+1+0 \sim \frac{1}{2}N^2$ compares and $N$ exchanges.</li>
+<li>Running time insensitive to input. Even if the array is sorted, the algorithm still needs to do all the comparation and exchange as well. Quadratic time.</li>
 </ul>
-<ol>
-<li>示例配置文件可以在<a href="http://aria2c.com/archiver/aria2.conf" target="_blank" rel="external">aria2.conf</a>中下载到。将其中保存路径<code>dir</code>那一行的值改为<code>/Users/username/Downloads</code></li>
-<li>在Terminal中输入<code>mkdir ~/.aria2</code>，在<code>/Users/username</code>下建立一个<code>.aria2</code>的隐藏文件夹，并将改好的配置文件拷到这里</li>
-<li>在Terminal中输入<code>aria2c --conf-path=&quot;/Users/username/.aria2/aria2.conf&quot; -D</code>即可启动aria2c</li>
-<li>还嫌啰嗦的话，在<code>/etc/aria2</code>目录下建立aria2.session文件。（vi一个空白文件即可，需要sudo。在上述很长的辣个命令中，此文件被放到了/Downloads下，如果不想改就要改变aria2.conf中的参数）总之，配置文件中的session文件参数要和实际地址一样，在Terminal中输入<code>aria2c</code>即可启动aria2。</li>
-</ol>
-<h1 id="u63A7_u5236Aria2"><a href="#u63A7_u5236Aria2" class="headerlink" title="控制Aria2"></a>控制Aria2</h1><p>aria2可以使用WebUI来控制，我使用的是<a href="http://ziahamza.github.io/webui-aria2/#" target="_blank" rel="external">Aria2 WebUI</a>。打开网页时即可自动检测aria2是否运行正常。</p>
-<h1 id="u4F7F_u7528Aria2_u4E0B_u8F7D_uFF08_u4EE5BaiduPan_u4E3A_u4F8B_uFF09"><a href="#u4F7F_u7528Aria2_u4E0B_u8F7D_uFF08_u4EE5BaiduPan_u4E3A_u4F8B_uFF09" class="headerlink" title="使用Aria2下载（以BaiduPan为例）"></a>使用Aria2下载（以BaiduPan为例）</h1><p>首先需要安装对应浏览器的插件<a href="https://github.com/acgotaku" target="_blank" rel="external">acgotaku</a>，我只测试了Safari下的百度盘插件。安装好后再进入网盘主页，勾选要下载的项目在我的设备旁边会出现一个导出下载。保证aria2和WebUI都运行的情况下点击该按钮下拉的Aria2 RPC即可自动使用WebUI开始下载了，完美解决mac上下载度盘文件不方便的问题。</p>
-<p>需要断点续传时，在百度盘页面重新导出下载，aria2会自动在下载目录中找到.aria2文件并续传。</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li><a href="http://bbs.feng.com/read-htm-tid-9585996.html" target="_blank" rel="external">http://bbs.feng.com/read-htm-tid-9585996.html</a></li>
-<li><a href="http://aria2c.com/usage.html" target="_blank" rel="external">http://aria2c.com/usage.html</a></li>
-<li><a href="http://bbs.kafan.cn/thread-1686205-1-1.html" target="_blank" rel="external">http://bbs.kafan.cn/thread-1686205-1-1.html</a></li>
-</ol>
+<h2 id="Insertion_Sort"><a href="#Insertion_Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h2><ul>
+<li>In iteration <em>i</em>, swap a[i] with <strong>each</strong> largerentry to its left.</li>
+<li>Entries to the left of current entry (including current entry) are in ascending order after each iteration.</li>
+<li>Entries to the right of current entry have not yet been seen.</li>
+<li>To sort a randomly-ordered array, the algorithm takes $\frac{1}{4}N^2$ compares and $\frac{1}{4}N^2$ exchanges. Twice faster than selection sort.</li>
+<li>Input sensitive:<ul>
+<li>Best case (array in ascending order): $N-1$ compares and $0$ exchanges.</li>
+<li>Worst case (array in descending order): $\frac{1}{2}N^2$ compares and $\frac{1}{2}N^2$ exchanges.</li>
+</ul>
+</li>
+<li>Def. <strong>inversion</strong> is a pair of keys out of order.</li>
+<li>An array is <strong>partially sorted</strong> if the number of inversions is $\leq{cN}$ (linear).</li>
+<li>Insertion sort runs in <strong>linear time</strong> or partially sorted arrays. <ul>
+<li>$N<em>{exchange} = N </em>{inversions}$</li>
+<li>$N<em>{compares}~ = N</em>{exchange} + (N-1)$</li>
+</ul>
+</li>
+</ul>
+<h2 id="Shellsort"><a href="#Shellsort" class="headerlink" title="Shellsort"></a>Shellsort</h2><ul>
+<li>Move entries more than one position at  a time by <em>h-sorting</em> array.</li>
+<li><em>h-sorting</em> array is h interlved sorted subsequences.</li>
+<li>Each time, starting from the $h+1 ^{th}$ entry, do <strong>insertion sort</strong> with stride <em>h</em>.</li>
+<li>For each time, the <em>h-sorting</em> array is partially sorted, so the time consumption of each insertion sort is linear.</li>
+<li>A <em>g-</em>sorted array remains <em>g-</em>sorted after <em>h-</em>sorting it.</li>
+<li>Sequence to use:<ul>
+<li>$3x+1$: 1, 4, 13, 40, 121, 364…</li>
+<li>Sedgewick: 1, 5, 19, 41, 109, 209, 505, 929, 2161, 3905…</li>
+</ul>
+</li>
+<li>Worst-case number of compares with the $3x+1$ increment is $O(N^{\frac{3}{2}})$</li>
+</ul>
+<h2 id="Merge_Sort"><a href="#Merge_Sort" class="headerlink" title="Merge Sort"></a>Merge Sort</h2><ul>
+<li>At most $NlgN$ compares and $6NlgN$ array accesses to sort any array of size $N$.</li>
+<li>$C(N)$ for compare time, $A(N)$ for access time<ul>
+<li>$C(N) \leq C(N/2) +C(N/2) + N$, $C(1) = 0$</li>
+<li>$A(N) \leq A(N/2) +A(N/2) + 6N$,  $A(1) = 0$</li>
+</ul>
+</li>
+</ul>
+<h2 id="Quick_Sort"><a href="#Quick_Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h2><h1 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h1><h2 id="Knuth_Shuffle"><a href="#Knuth_Shuffle" class="headerlink" title="Knuth Shuffle"></a>Knuth Shuffle</h2><ul>
+<li>In each iteration <em>i</em>, pick <em>r</em> between 0 (inclusive) to <em>i</em> (inclusive) uniformly at random, than swap a[r] and a[i]</li>
+<li>Takes linear time to produce a uniformly random permutation</li>
+</ul>
+<h2 id="Convex_Hull"><a href="#Convex_Hull" class="headerlink" title="Convex Hull"></a>Convex Hull</h2><ul>
+<li>The convex hull of a set of <em>N</em> points is the smallest perimeter fence enclosing all the points.</li>
+<li>Procedure:<ul>
+<li>Choose point p with smallest <em>y-</em>coordinate</li>
+<li>Sort all the remaining points by polar angle with p</li>
+<li>Consider points in order, discard unless it creates a counter clockwise turn</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/aria2/" rel="tag">#aria2</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/15/At_the_beginning/" rel="next" title="写在开始的话">
-                <i class="fa fa-chevron-left"></i> 写在开始的话
+              <a href="/2016/02/17/Algorithm-4e-Union-Find-Perlocation/" rel="next" title="Algorithm 4e - Union Find & Perlocation">
+                <i class="fa fa-chevron-left"></i> Algorithm 4e - Union Find & Perlocation
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/17/Algorithm-4e-Union-Find-Perlocation/" rel="prev" title="Algorithm 4e - Union Find & Perlocation">
-                Algorithm 4e - Union Find & Perlocation <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -413,7 +433,7 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E0B_u8F7DAria2"><span class="nav-number">1.</span> <span class="nav-text">下载Aria2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u914D_u7F6EAria2"><span class="nav-number">2.</span> <span class="nav-text">配置Aria2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u63A7_u5236Aria2"><span class="nav-number">3.</span> <span class="nav-text">控制Aria2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4F7F_u7528Aria2_u4E0B_u8F7D_uFF08_u4EE5BaiduPan_u4E3A_u4F8B_uFF09"><span class="nav-number">4.</span> <span class="nav-text">使用Aria2下载（以BaiduPan为例）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Callback"><span class="nav-number">1.</span> <span class="nav-text">Callback</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sort_Algorithms"><span class="nav-number">2.</span> <span class="nav-text">Sort Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Selection_Sort"><span class="nav-number">2.1.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Insertion_Sort"><span class="nav-number">2.2.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shellsort"><span class="nav-number">2.3.</span> <span class="nav-text">Shellsort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge_Sort"><span class="nav-number">2.4.</span> <span class="nav-text">Merge Sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Sort"><span class="nav-number">2.5.</span> <span class="nav-text">Quick Sort</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Application"><span class="nav-number">3.</span> <span class="nav-text">Application</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Knuth_Shuffle"><span class="nav-number">3.1.</span> <span class="nav-text">Knuth Shuffle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convex_Hull"><span class="nav-number">3.2.</span> <span class="nav-text">Convex Hull</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

@@ -105,7 +105,7 @@ command以filename作为标准输入
 
 
 command">
-<meta property="og:updated_time" content="2016-05-13T07:44:47.000Z">
+<meta property="og:updated_time" content="2016-05-13T07:46:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSAPP Lab3 - Attack Lab">
 <meta name="twitter:description" content="PrerequisiteRedirct
@@ -328,14 +328,12 @@ command">
 <td style="text-align:center">command以filename1作为标准输入，输出重定向到filename2</td>
 </tr>
 <tr>
-<td style="text-align:center">cat filename \</td>
-<td style="text-align:center">./exec</td>
-<td>cat是连接文件，顺序读取文件并写入标准输出。</td>
+<td style="text-align:center">cat filename &#124; ./exec</td>
+<td style="text-align:center">cat是连接文件，顺序读取文件并写入标准输出。</td>
 </tr>
 <tr>
 <td style="text-align:center"></td>
-<td style="text-align:center">\</td>
-<td>是管道，将前面程序的标准输出作为后面程序的标准输入</td>
+<td style="text-align:center">&#124; 是管道，将前面程序的标准输出作为后面程序的标准输入</td>
 </tr>
 </tbody>
 </table>

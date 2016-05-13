@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="aria2," />
+  <meta name="keywords" content="Assembly,CSAPP,Lab," />
 
 
 
@@ -57,25 +57,49 @@
 
 
 
-<meta name="description" content="下载Aria2现在链接在此：aria2。Mac下安装完成后在Application、Alfred和Terminal中都看不到aria2命令，这是正常的，需要经过下一步配置才可以，安装目录在/usr/local/aria2下。
-Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew install aria2。
-安装完成后输入aria2c -v应该可以看到版本信息。
-配置A">
+<meta name="description" content="Prerequisite
+Mac OSX上没有objdump，此命令属于GNU Binutils，使用brew install binutils安装
+
+
+bomb是linux程序，OSX无法运行，需要安装虚拟机
+
+
+gdb加参数：程序开始运行后 set args args0 args1…
+
+int sscanf ( const char  s, const char  format, …);
+
+s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Aria2 for Mac">
-<meta property="og:url" content="http://yoursite.com/2016/02/16/Aria2-for-Mac/index.html">
+<meta property="og:title" content="CSAPP Lab2 - Bomb Lab">
+<meta property="og:url" content="http://yoursite.com/2016/05/12/CSAPP-Lab2-Bomb-Lab/index.html">
 <meta property="og:site_name" content="Over The River, To The Sea">
-<meta property="og:description" content="下载Aria2现在链接在此：aria2。Mac下安装完成后在Application、Alfred和Terminal中都看不到aria2命令，这是正常的，需要经过下一步配置才可以，安装目录在/usr/local/aria2下。
-Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew install aria2。
-安装完成后输入aria2c -v应该可以看到版本信息。
-配置A">
-<meta property="og:updated_time" content="2016-02-15T16:36:33.000Z">
+<meta property="og:description" content="Prerequisite
+Mac OSX上没有objdump，此命令属于GNU Binutils，使用brew install binutils安装
+
+
+bomb是linux程序，OSX无法运行，需要安装虚拟机
+
+
+gdb加参数：程序开始运行后 set args args0 args1…
+
+int sscanf ( const char  s, const char  format, …);
+
+s">
+<meta property="og:updated_time" content="2016-05-13T07:34:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aria2 for Mac">
-<meta name="twitter:description" content="下载Aria2现在链接在此：aria2。Mac下安装完成后在Application、Alfred和Terminal中都看不到aria2命令，这是正常的，需要经过下一步配置才可以，安装目录在/usr/local/aria2下。
-Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew install aria2。
-安装完成后输入aria2c -v应该可以看到版本信息。
-配置A">
+<meta name="twitter:title" content="CSAPP Lab2 - Bomb Lab">
+<meta name="twitter:description" content="Prerequisite
+Mac OSX上没有objdump，此命令属于GNU Binutils，使用brew install binutils安装
+
+
+bomb是linux程序，OSX无法运行，需要安装虚拟机
+
+
+gdb加参数：程序开始运行后 set args args0 args1…
+
+int sscanf ( const char  s, const char  format, …);
+
+s">
 
 
 
@@ -93,7 +117,7 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
   };
 </script>
 
-  <title> Aria2 for Mac | Over The River, To The Sea </title>
+  <title> CSAPP Lab2 - Bomb Lab | Over The River, To The Sea </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -211,7 +235,7 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
             
             
               
-                Aria2 for Mac
+                CSAPP Lab2 - Bomb Lab
               
             
           </h1>
@@ -223,8 +247,8 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-02-16T00:35:03+08:00" content="2016-02-16">
-              2016-02-16
+            <time itemprop="dateCreated" datetime="2016-05-12T09:46:42+08:00" content="2016-05-12">
+              2016-05-12
             </time>
           </span>
 
@@ -249,29 +273,86 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
       
 
       
-        <h1 id="u4E0B_u8F7DAria2"><a href="#u4E0B_u8F7DAria2" class="headerlink" title="下载Aria2"></a>下载Aria2</h1><p>现在链接在此：<a href="https://aria2.github.io" target="_blank" rel="external">aria2</a>。Mac下安装完成后在Application、Alfred和Terminal中都看不到aria2命令，这是正常的，需要经过下一步配置才可以，安装目录在<code>/usr/local/aria2</code>下。</p>
-<p>Mac下更简单的方法是安装了Homebrew后直接在Terminal输入<code>brew install aria2</code>。</p>
-<p>安装完成后输入<code>aria2c -v</code>应该可以看到版本信息。</p>
-<h1 id="u914D_u7F6EAria2"><a href="#u914D_u7F6EAria2" class="headerlink" title="配置Aria2"></a>配置Aria2</h1><p>如果使用brew安装后，在Terminal输入<code>touch /Users/yourname/Downloads/session.txt &amp;&amp; aria2c --enable-rpc --rpc-listen-all --save-session=/Users/yourname/Downloads/session.txt --input-file=/Users/yourname/Downloads/session.txt -x16 -s16 -k1M --dir=/Users/yourname/Downloads</code>就可以启动aria2了。启动后webUI界面已经可以看到成功建立连接。但是为了方便不用每次输入这么一长串，可以使用配置文件的方式来简化操作。</p>
-<p>此步骤需要更改aria2的配置文件，有两个网站可供参考：</p>
-<ul>
-<li><a href="http://aria2c.com/usage.html" target="_blank" rel="external">Aria2 &amp; YAAW 使用说明</a></li>
-<li><a href="https://aria2.github.io/manual/en/html/aria2c.html" target="_blank" rel="external">aria2c</a></li>
+        <h1 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h1><ul>
+<li>Mac OSX上没有objdump，此命令属于GNU Binutils，使用brew install binutils安装</li>
 </ul>
-<ol>
-<li>示例配置文件可以在<a href="http://aria2c.com/archiver/aria2.conf" target="_blank" rel="external">aria2.conf</a>中下载到。将其中保存路径<code>dir</code>那一行的值改为<code>/Users/username/Downloads</code></li>
-<li>在Terminal中输入<code>mkdir ~/.aria2</code>，在<code>/Users/username</code>下建立一个<code>.aria2</code>的隐藏文件夹，并将改好的配置文件拷到这里</li>
-<li>在Terminal中输入<code>aria2c --conf-path=&quot;/Users/username/.aria2/aria2.conf&quot; -D</code>即可启动aria2c</li>
-<li>还嫌啰嗦的话，在<code>/etc/aria2</code>目录下建立aria2.session文件。（vi一个空白文件即可，需要sudo。在上述很长的辣个命令中，此文件被放到了/Downloads下，如果不想改就要改变aria2.conf中的参数）总之，配置文件中的session文件参数要和实际地址一样，在Terminal中输入<code>aria2c</code>即可启动aria2。</li>
-</ol>
-<h1 id="u63A7_u5236Aria2"><a href="#u63A7_u5236Aria2" class="headerlink" title="控制Aria2"></a>控制Aria2</h1><p>aria2可以使用WebUI来控制，我使用的是<a href="http://ziahamza.github.io/webui-aria2/#" target="_blank" rel="external">Aria2 WebUI</a>。打开网页时即可自动检测aria2是否运行正常。</p>
-<h1 id="u4F7F_u7528Aria2_u4E0B_u8F7D_uFF08_u4EE5BaiduPan_u4E3A_u4F8B_uFF09"><a href="#u4F7F_u7528Aria2_u4E0B_u8F7D_uFF08_u4EE5BaiduPan_u4E3A_u4F8B_uFF09" class="headerlink" title="使用Aria2下载（以BaiduPan为例）"></a>使用Aria2下载（以BaiduPan为例）</h1><p>首先需要安装对应浏览器的插件<a href="https://github.com/acgotaku" target="_blank" rel="external">acgotaku</a>，我只测试了Safari下的百度盘插件。安装好后再进入网盘主页，勾选要下载的项目在我的设备旁边会出现一个导出下载。保证aria2和WebUI都运行的情况下点击该按钮下拉的Aria2 RPC即可自动使用WebUI开始下载了，完美解决mac上下载度盘文件不方便的问题。</p>
-<p>需要断点续传时，在百度盘页面重新导出下载，aria2会自动在下载目录中找到.aria2文件并续传。</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li><a href="http://bbs.feng.com/read-htm-tid-9585996.html" target="_blank" rel="external">http://bbs.feng.com/read-htm-tid-9585996.html</a></li>
-<li><a href="http://aria2c.com/usage.html" target="_blank" rel="external">http://aria2c.com/usage.html</a></li>
-<li><a href="http://bbs.kafan.cn/thread-1686205-1-1.html" target="_blank" rel="external">http://bbs.kafan.cn/thread-1686205-1-1.html</a></li>
-</ol>
+<ul>
+<li>bomb是linux程序，OSX无法运行，需要安装虚拟机</li>
+</ul>
+<ul>
+<li>gdb加参数：程序开始运行后 set args args0 args1…</li>
+</ul>
+<p>int sscanf ( const char <em> s, const char </em> format, …);</p>
+<ul>
+<li><p>s</p>
+<p>C string that the function processes as its source to retrieve the data.</p>
+</li>
+<li><p>format</p>
+<p>C string that contains a format string that follows the same specifications as <em>format</em> in <a href="http://www.cplusplus.com/scanf" target="_blank" rel="external">scanf</a> (see <a href="http://www.cplusplus.com/scanf" target="_blank" rel="external">scanf</a> for details).</p>
+</li>
+<li><p>… <em>(additional arguments)</em></p>
+<p>Depending on the <em>format</em> string, the function may expect a sequence of additional arguments, each containing a pointer to allocated storage where the interpretation of the extracted characters is stored with the appropriate type.There should be at least as many of these arguments as the number of values stored by the <em>format specifiers</em>. Additional arguments are ignored by the function.</p>
+</li>
+</ul>
+<p>On success, the function returns the number of items in the argument list successfully filled. This count can match the expected number of items or be less (even zero) in the case of a matching failure.</p>
+<p>In the case of an input failure before any data could be successfully interpreted, <a href="http://www.cplusplus.com/EOF" target="_blank" rel="external">EOF</a> is returned.</p>
+<h1 id="Lab"><a href="#Lab" class="headerlink" title="Lab"></a>Lab</h1><h2 id="phase1"><a href="#phase1" class="headerlink" title="phase1"></a>phase1</h2><p>程序判断了两个字符串长度，一个是自己的，一个是预设答案。读一下两个的内容即可知道答案。</p>
+<h2 id="phase2"><a href="#phase2" class="headerlink" title="phase2"></a>phase2</h2><p>通过sscanf的第二个参数（存在rsi中）判断答案的格式</p>
+<p>有六个数，存在rsp+0 ，4 ，8 ，12，16，20中</p>
+<p>第一个数为1，后面的数不能为0且为前面的2倍</p>
+<h2 id="phase3"><a href="#phase3" class="headerlink" title="phase3"></a>phase3</h2><p>通过sscanf判断 有两个数a[1]a[2]，存在rsp的低高位</p>
+<p>函数体是一个switch，根据a[1]的值判断a[2]。注意jmpq *0x402470(,%rax, 8)</p>
+<p>要计算0x402470+8*[%rax]，在这个地址内存的才是要跳转的地址，即jmp的indirect jump</p>
+<p>答案共六组</p>
+<h2 id="phase4"><a href="#phase4" class="headerlink" title="phase4"></a>phase4</h2><p>用到了递归，首先判断出答案为两个数字a, b</p>
+<p>调用func4前没有往栈内写数据，判断寄存器情况里猜测传递到参数</p>
+<p>检测a使用了递归</p>
+<p>注意移位命令只有一个参数时，就是向对应方向移一位</p>
+<p>func4是个二分查找…… 判func(a, m, n) a是自己的答案，mn初始值为0，14</p>
+<p>但是递归条件中，当a在当前区间大的那一半时，即使最后找到了返回值也会置1，引爆炸弹</p>
+<p>所以可行解只有7，3，1，0</p>
+<p>当m=n时</p>
+<p>答案是每个区间的中值 1，3，7，10</p>
+<p>检测b直接判断其是否为0</p>
+<h2 id="phase5"><a href="#phase5" class="headerlink" title="phase5"></a>phase5</h2><p>程序使用了stack canary</p>
+<p>答案长度为6</p>
+<p>使用了for循环，依次取出各值放入rdx中</p>
+<p>根据其ASCII码的低位byte在内存中取一个byte存入rsp+10 ~ rsp +15中</p>
+<p>rdi指向这一串字符，esi从0x40245e去一串进行比较，不相等引爆炸弹</p>
+<p>所以通过esi中的值（flyers）得到rdi应该的值，读取0x4024b0及其后的16个byte（因为最后一位最多有16种情况）</p>
+<p>反推正确答案的低位byte</p>
+<p>依次是9 f e 5 6 7，低位是这些的ascii字符都对(e.g. YOnefg, 9?&gt;567 etc.)</p>
+<h2 id="phase6"><a href="#phase6" class="headerlink" title="phase6"></a>phase6</h2><p>和phase2一样，read six number中sscanf判断是6个数，存在phase6的栈底（每个栈块存两个int）</p>
+<p>注意，第六行后必须有回车，否则只能读5个数</p>
+<p>读取后两层循环嵌套，外层循环标记为r12d，rbp和r13指向当前检测字符，每一位减一后都要小于等于5</p>
+<p>由于判断小于用的是jbe 因此参数为unsigned,且&gt;=1</p>
+<p>内存循环标记ebx，指向当前检测字符的下一个，所有数都两两不同，当前字符和其后面的某字符相同时爆炸</p>
+<p>内层循环事实上会超出6个数的范围，访问到栈地址更高的地方，但是那些地方全是0，没有关系</p>
+<p>两层循环的结果表明答案是1 2 3 4 5 6的某个排列&lt;+95&gt;</p>
+<p>然后把所有数a变成b=7-a  &lt;+121&gt;</p>
+<p>遍历这6个数，如果某个数&lt;=1， 则取0x6032d0存到目的地址</p>
+<p>若&gt;1, 则从0x6032d0的node后移b-1个位置取下一node的地址存到目的地址</p>
+<p>这样相当于把6个node(c1~c6)存到rsp+0x20开始的栈上</p>
+<p>（六个目的地址对应为rsp+20 28 30 38 40 48）</p>
+<p>0x6032d0存着6个node，各node起始地址为</p>
+<p>0x6032d0,2e0,2f0,300,310,320</p>
+<p>每个node起始+0存一个数，+4存序数（1-6），+8存下个node开始地址（最后一个node存的0），+e存0</p>
+<p>接着修改对应node的下一地址（修改node顺序）</p>
+<p>把栈上后一个结点的起始地址赋给前一个结点的下一地址</p>
+<p>c1-&gt;c2-&gt;c3&gt;c4-&gt;c5-&gt;c6-&gt;0x0（最后一个结点的下一节点为0）</p>
+<p>接着比较节点存的数，前面的大于等于后面的</p>
+<p>炸弹程序到此结束，解答步骤，根据0x6032d0六个node存的数大小重新排列</p>
+<p>2f0-&gt;300-&gt;310-&gt;320-&gt;2d0-&gt;2e0-&gt;0x0</p>
+<p>这样每个结点相对于初始状态下0x6032d0结点顺序的偏移量就能计算出来 改偏移量</p>
+<p>3 4 5 6 1 2</p>
+<p>这个数即为7-a， 所以答案应为4 3 2 1 6 5</p>
+<p>如果你的 openSUSE 是在 Virtualbox 里装的，它会自动识别到你是装在 Virtualbox 环境的，因此会为您预装好 virtualbox-guest-kmp-desktop virtualbox-guest-tools virtualbox-guest-x11 这三个软件包（相当于从官网下载的那个增强功能扩展）。而如果你的 Virtualbox 是从官网下载 RPM 安装的，这两个的版本一般是不会匹配的。这会导致显示效果不是很好，比如 GNOME shell 非全屏打开应用程序时背景是白色的，然后程序的阴影变成了大黑框，以及鼠标移动到的位置会闪色块等（看上去跟没装显卡驱动的感觉是一样的），这都是因为驱动版本不匹配的原因。</p>
+<p>所以要先打开 YaST 软件管理，把预装的这几个软件包卸载掉。</p>
+<p>然后安装 kernel-desktop-devel gcc make automake 这四个软件包。接着按照上面说的点击「安装增强功能」按钮就可以了。</p>
+<p>在 GNOME 下面会直接问你有个软件，要不要安装，选是，会提示你输入 root 密码然后弹出一个 gnome terminal 窗口，等所有的项目都出现绿色的 done 后，会提示你按 return 这时按回车。然后重启就好。</p>
+<p>KDE 下面可以打开 Dolphin 定位到挂载好的那个文件夹（跟你平时挂载 U 盘是一样的），双击那个 autorun.sh。其它同 GNOME。也可以用命令行：</p>
+<p>cd /var/run/media/&lt;你的用户名&gt;</p>
+<p>./autorun.sh</p>
 
       
     </div>
@@ -280,7 +361,11 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
       
         <div class="post-tags">
           
-            <a href="/tags/aria2/" rel="tag">#aria2</a>
+            <a href="/tags/Assembly/" rel="tag">#Assembly</a>
+          
+            <a href="/tags/CSAPP/" rel="tag">#CSAPP</a>
+          
+            <a href="/tags/Lab/" rel="tag">#Lab</a>
           
         </div>
       
@@ -289,16 +374,16 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/15/At_the_beginning/" rel="next" title="写在开始的话">
-                <i class="fa fa-chevron-left"></i> 写在开始的话
+              <a href="/2016/02/18/Algorithm-4e-Sort-Collinear-Points/" rel="next" title="Algorithm 4e - Sort & Collinear Points">
+                <i class="fa fa-chevron-left"></i> Algorithm 4e - Sort & Collinear Points
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/02/17/Algorithm-4e-Union-Find-Perlocation/" rel="prev" title="Algorithm 4e - Union Find & Perlocation">
-                Algorithm 4e - Union Find & Perlocation <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/12/CSAPP-Lab3-Attack-Lab/" rel="prev" title="CSAPP Lab3 - Attack Lab">
+                CSAPP Lab3 - Attack Lab <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -413,7 +498,7 @@ Mac下更简单的方法是安装了Homebrew后直接在Terminal输入brew insta
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E0B_u8F7DAria2"><span class="nav-number">1.</span> <span class="nav-text">下载Aria2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u914D_u7F6EAria2"><span class="nav-number">2.</span> <span class="nav-text">配置Aria2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u63A7_u5236Aria2"><span class="nav-number">3.</span> <span class="nav-text">控制Aria2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4F7F_u7528Aria2_u4E0B_u8F7D_uFF08_u4EE5BaiduPan_u4E3A_u4F8B_uFF09"><span class="nav-number">4.</span> <span class="nav-text">使用Aria2下载（以BaiduPan为例）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Prerequisite"><span class="nav-number">1.</span> <span class="nav-text">Prerequisite</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lab"><span class="nav-number">2.</span> <span class="nav-text">Lab</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#phase1"><span class="nav-number">2.1.</span> <span class="nav-text">phase1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phase2"><span class="nav-number">2.2.</span> <span class="nav-text">phase2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phase3"><span class="nav-number">2.3.</span> <span class="nav-text">phase3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phase4"><span class="nav-number">2.4.</span> <span class="nav-text">phase4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phase5"><span class="nav-number">2.5.</span> <span class="nav-text">phase5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phase6"><span class="nav-number">2.6.</span> <span class="nav-text">phase6</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

